@@ -39,6 +39,9 @@ jobs:
         sudo apt update
         sudo apt install -y libgeos-dev
       shell: sh
+    - name: Build API reference pages
+      run: |
+        python -m quartodoc build
     - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
     - name: Render and Publish
