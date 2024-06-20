@@ -1,12 +1,7 @@
 pre-commit
-r5py==0.1.0
 gtfs_kit==5.2.7
-rasterio
 matplotlib>=3.7.0
-scipy
-rioxarray
 geopandas
-geocube
 pyproj>=3.6.0
 pytest<8.0.0 # avoid breaking change 'CallSpec2' object has no attribute 'funcargs'
 coverage
@@ -20,7 +15,6 @@ pytest-mock
 toml
 plotly
 nbformat>=4.2.0
-scikit-image
 cartopy
 folium
 mapclassify
@@ -31,7 +25,6 @@ kaleido
 numpy>=1.25.0 # test suite will fail if user installed lower than this
 dask[dataframe]
 pyarrow >= 14.0.1 # 14.0.0 has security vulnerability
-osmium # has dependencies on `cmake` and `boost` which require brew install
 tqdm
 quartodoc
 jupyterlab
