@@ -4,7 +4,7 @@ import pathlib
 import pickle
 from typing import Union
 
-from transport_performance.utils.defence import (
+from assess_gtfs.utils.defence import (
     _check_parent_dir_exists,
     _enforce_file_extension,
     _is_expected_filetype,
