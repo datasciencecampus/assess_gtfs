@@ -28,4 +28,5 @@ pyarrow >= 14.0.1 # 14.0.0 has security vulnerability
 tqdm
 quartodoc
 jupyterlab
+r5py # test_gtfs_utils checks filter strategy successfully builds r5py network
 -e .
