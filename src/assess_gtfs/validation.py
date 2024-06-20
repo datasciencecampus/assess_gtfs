@@ -18,26 +18,26 @@ from geopandas import GeoDataFrame
 from plotly.graph_objects import Figure as PlotlyFigure
 from pretty_html_table import build_table
 
-from transport_performance.gtfs.calendar import create_calendar_from_dates
-from transport_performance.gtfs.cleaners import (
+from assess_gtfs.calendar import create_calendar_from_dates
+from assess_gtfs.cleaners import (
     clean_consecutive_stop_fast_travel_warnings,
     clean_multiple_stop_fast_travel_warnings,
 )
-from transport_performance.gtfs.gtfs_utils import filter_gtfs
-from transport_performance.gtfs.report.report_utils import (
+from assess_gtfs.gtfs_utils import filter_gtfs
+from assess_gtfs.gtfs.report.report_utils import (
     TemplateHTML,
     _set_up_report_dir,
 )
-from transport_performance.gtfs.routes import (
+from assess_gtfs.routes import (
     get_saved_route_type_lookup,
     scrape_route_type_lookup,
 )
-from transport_performance.gtfs.validators import (
+from assess_gtfs.validators import (
     validate_travel_between_consecutive_stops,
     validate_travel_over_multiple_stops,
 )
-from transport_performance.utils.constants import PKG_PATH
-from transport_performance.utils.defence import (
+from assess_gtfs.utils.constants import PKG_PATH
+from assess_gtfs.utils.defence import (
     _check_attribute,
     _check_column_in_df,
     _check_item_in_iter,

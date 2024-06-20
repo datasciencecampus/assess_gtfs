@@ -13,10 +13,10 @@ from pyprojroot import here
 from shapely.geometry import box
 
 if TYPE_CHECKING:
-    from transport_performance.gtfs.validation import GtfsInstance
+    from assess_gtfs.gtfs.validation import GtfsInstance
 
-from transport_performance.utils.constants import PKG_PATH
-from transport_performance.utils.defence import (
+from assess_gtfs.utils.constants import PKG_PATH
+from assess_gtfs.utils.defence import (
     _check_attribute,
     _check_item_in_iter,
     _check_iterable,

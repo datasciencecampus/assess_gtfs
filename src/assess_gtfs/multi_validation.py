@@ -15,8 +15,8 @@ from folium.plugins import FastMarkerCluster
 from geopandas import GeoDataFrame
 from tqdm import tqdm
 
-from transport_performance.gtfs.validation import GtfsInstance
-from transport_performance.utils.defence import (
+from assess_gtfs.gtfs.validation import GtfsInstance
+from assess_gtfs.utils.defence import (
     _check_parent_dir_exists,
     _enforce_file_extension,
     _is_expected_filetype,

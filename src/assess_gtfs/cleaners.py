@@ -4,7 +4,7 @@ from typing import Union
 
 import numpy as np
 
-from transport_performance.utils.defence import _check_iterable, _gtfs_defence
+from assess_gtfs.utils.defence import _check_iterable, _gtfs_defence
 
 
 def drop_trips(gtfs, trip_id: Union[str, list, np.ndarray]) -> None:

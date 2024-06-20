@@ -4,7 +4,7 @@ from copy import deepcopy
 
 import pandas as pd
 
-from transport_performance.utils.defence import (
+from assess_gtfs.utils.defence import (
     _check_column_in_df,
     _type_defence,
 )

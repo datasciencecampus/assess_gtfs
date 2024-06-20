@@ -8,8 +8,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from transport_performance.utils.constants import PKG_PATH
-from transport_performance.utils.defence import (
+from assess_gtfs.utils.constants import PKG_PATH
+from assess_gtfs.utils.defence import (
     _is_expected_filetype,
     _type_defence,
     _url_defence,
