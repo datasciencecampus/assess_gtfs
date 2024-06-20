@@ -4,8 +4,8 @@ import pathlib
 import shutil
 from typing import Union
 
-from transport_performance.utils.constants import PKG_PATH
-from transport_performance.utils.defence import (
+from assess_gtfs.utils.constants import PKG_PATH
+from assess_gtfs.utils.defence import (
     _check_parent_dir_exists,
     _handle_path_like,
     _type_defence,
