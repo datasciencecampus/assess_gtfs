@@ -24,7 +24,7 @@ from assess_gtfs.cleaners import (
     clean_multiple_stop_fast_travel_warnings,
 )
 from assess_gtfs.gtfs_utils import filter_gtfs
-from assess_gtfs.gtfs.report.report_utils import (
+from assess_gtfs.report.report_utils import (
     TemplateHTML,
     _set_up_report_dir,
 )

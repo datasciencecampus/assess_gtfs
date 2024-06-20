@@ -13,7 +13,7 @@ from pyprojroot import here
 from shapely.geometry import box
 
 if TYPE_CHECKING:
-    from assess_gtfs.gtfs.validation import GtfsInstance
+    from assess_gtfs.validation import GtfsInstance
 
 from assess_gtfs.utils.constants import PKG_PATH
 from assess_gtfs.utils.defence import (

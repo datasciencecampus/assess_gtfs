@@ -5,11 +5,11 @@ import numpy as np
 import pandas as pd
 from haversine import Unit, haversine_vector
 
-from assess_gtfs.gtfs.gtfs_utils import _add_validation_row
+from assess_gtfs.gtfs_utils import _add_validation_row
 from assess_gtfs.utils.defence import _gtfs_defence
 
 if TYPE_CHECKING:
-    from assess_gtfs.gtfs.validation import GtfsInstance
+    from assess_gtfs.validation import GtfsInstance
 
 # a constant containing the max acceptable speed of a route type (vehicle type)
 VEHICLE_SPEED_BOUNDS = {
