@@ -80,7 +80,7 @@ class TestScrapeRouteTypeLookup(object):
     def test_table_without_extended_schema(self, mocker):
         """Check the return object when extended_schema = False."""
         patch_resp_txt = mocker.patch(
-            "transport_performance.gtfs.routes._get_response_text",
+            "assess_gtfs.routes._get_response_text",
             side_effect=mocked__get_response_text,
         )
         result = scrape_route_type_lookup(extended_schema=False)
@@ -100,7 +100,7 @@ class TestScrapeRouteTypeLookup(object):
     def test_table_with_extended_schema(self, mocker):
         """Check return table when extended schema = True."""
         patch_resp_txt = mocker.patch(
-            "transport_performance.gtfs.routes._get_response_text",
+            "assess_gtfs.routes._get_response_text",
             side_effect=mocked__get_response_text,
         )
         result = scrape_route_type_lookup()

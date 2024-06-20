@@ -1,4 +1,4 @@
-"""Tests for the transport_performance.gtfs.cleaners.py module."""
+"""Tests for the assess_gtfs.cleaners.py module."""
 import os
 import re
 

@@ -473,26 +473,26 @@ class Test_HandlePathLike(object):
 
     # Paremetrize tests. First dictionary contains string like paths.
     pth_str = {
-        "unix_pth": ["foo/bar", "/transport-network-performance/foo/bar"],
+        "unix_pth": ["foo/bar", "/assess_gtfs/foo/bar"],
         "unix_symlink": [
             "foo/bar/../baz",
-            "/transport-network-performance/foo/baz",
+            "/assess_gtfs/foo/baz",
         ],
         "windows_single": [
             r"foo\bar",
-            "/transport-network-performance/foo/bar",
+            "/assess_gtfs/foo/bar",
         ],
         "windows_double": [
             "foo\\bar",
-            "/transport-network-performance/foo/bar",
+            "/assess_gtfs/foo/bar",
         ],
         "windows_mixed": [
             r"foo\\bar\baz",
-            "transport-network-performance/foo/bar/baz",
+            "assess_gtfs/foo/bar/baz",
         ],
         "windows_symlink": [
             r"foo\\bar\\..\baz",
-            "/transport-network-performance/foo/baz",
+            "/assess_gtfs/foo/baz",
         ],
     }
     # second dict contains unix like, representing the user passing
@@ -500,27 +500,27 @@ class Test_HandlePathLike(object):
     pth_posix = {
         "unix_here": [
             here(pth_str["unix_pth"][0]),
-            "/transport-network-performance/foo/bar",
+            "/assess_gtfs/foo/bar",
         ],
         "unix_here_symlink": [
             here(pth_str["unix_symlink"][0]),
-            "/transport-network-performance/foo/baz",
+            "/assess_gtfs/foo/baz",
         ],
         "windows_single_here": [
             here(rf"{pth_str['windows_single'][0]}"),
-            "/transport-network-performance/foo/bar",
+            "/assess_gtfs/foo/bar",
         ],
         "windows_double_here": [
             here(pth_str["windows_double"][0]),
-            "/transport-network-performance/foo/bar",
+            "/assess_gtfs/foo/bar",
         ],
         "windows_mixed_here": [
             here(rf"{pth_str['windows_mixed'][0]}"),
-            "/transport-network-performance/foo/bar/baz",
+            "/assess_gtfs/foo/bar/baz",
         ],
         "windows_here_symlink": [
             here(pth_str["windows_symlink"][0]),
-            "/transport-network-performance/foo/baz",
+            "/assess_gtfs/foo/baz",
         ],
     }
 
