@@ -10,7 +10,7 @@ import pytest
 from plotly.graph_objects import Figure as PlotlyFigure
 from shapely.geometry import box
 
-from transport_performance.gtfs.gtfs_utils import (
+from assess_gtfs.gtfs_utils import (
     _add_validation_row,
     _validate_datestring,
     bbox_filter_gtfs,
@@ -18,7 +18,7 @@ from transport_performance.gtfs.gtfs_utils import (
     filter_gtfs,
     filter_gtfs_around_trip,
 )
-from transport_performance.gtfs.validation import GtfsInstance
+from assess_gtfs.validation import GtfsInstance
 
 # location of GTFS test fixture
 GTFS_FIX_PTH = os.path.join(

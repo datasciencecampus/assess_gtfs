@@ -7,7 +7,7 @@ import re
 import pytest
 from pyprojroot import here
 
-from transport_performance.gtfs.report.report_utils import (
+from assess_gtfs.report.report_utils import (
     TemplateHTML,
     _set_up_report_dir,
 )

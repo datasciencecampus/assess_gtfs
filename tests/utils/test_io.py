@@ -11,7 +11,7 @@ from geopandas.testing import assert_geodataframe_equal
 from pyprojroot import here
 from shapely.geometry import Point
 
-from transport_performance.utils.io import from_pickle, to_pickle
+from assess_gtfs.utils.io import from_pickle, to_pickle
 
 
 @pytest.fixture

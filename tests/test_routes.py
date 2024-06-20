@@ -11,11 +11,11 @@ import pytest
 from _pytest.python_api import RaisesContext
 from pyprojroot import here
 
-from transport_performance.gtfs.routes import (
+from assess_gtfs.routes import (
     get_saved_route_type_lookup,
     scrape_route_type_lookup,
 )
-from transport_performance.utils.constants import PKG_PATH
+from assess_gtfs.utils.constants import PKG_PATH
 
 
 def mocked__get_response_text(*args):

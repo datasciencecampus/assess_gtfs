@@ -5,8 +5,8 @@ import pandas as pd
 import pytest
 from pyprojroot import here
 
-from transport_performance.gtfs.validation import GtfsInstance
-from transport_performance.gtfs.validators import (
+from assess_gtfs.validation import GtfsInstance
+from assess_gtfs.validators import (
     validate_travel_between_consecutive_stops,
     validate_travel_over_multiple_stops,
 )

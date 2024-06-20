@@ -15,8 +15,8 @@ import plotly.graph_objs as go
 import pytest
 from pyprojroot import here
 
-from transport_performance.gtfs.multi_validation import MultiGtfsInstance
-from transport_performance.gtfs.validation import GtfsInstance
+from assess_gtfs.multi_validation import MultiGtfsInstance
+from assess_gtfs.validation import GtfsInstance
 
 
 @pytest.fixture(scope="function")

@@ -10,8 +10,8 @@ import pytest
 from _pytest.python_api import RaisesContext
 from pyprojroot import here
 
-from transport_performance.gtfs.validation import GtfsInstance
-from transport_performance.utils.defence import (
+from assess_gtfs.validation import GtfsInstance
+from assess_gtfs.utils.defence import (
     _check_attribute,
     _check_column_in_df,
     _check_item_in_iter,

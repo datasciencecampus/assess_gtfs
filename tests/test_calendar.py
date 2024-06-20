@@ -4,7 +4,7 @@ import calendar
 import pandas as pd
 import pytest
 
-from transport_performance.gtfs.calendar import create_calendar_from_dates
+from assess_gtfs.calendar import create_calendar_from_dates
 
 
 class TestCreateCalendarFromDates(object):
