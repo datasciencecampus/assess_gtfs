@@ -1,8 +1,8 @@
-The transport_performance package as a whole is distributed under MIT license
-(see file LICENSE). The transport_performance package includes other open
+The assess_gtfs package as a whole is distributed under MIT license
+(see file LICENSE). The assess_gtfs package includes other open
 source software components. The following is a list of these components:
 
-* /./src/transport_performance/data/gtfs/route_lookup.pkl This table is the
+* /./src/assess_gtfs/data/route_lookup.pkl This table is the
 result of a pandas concatenation of 2 scraped HTML tables:
     1. [GTFS route_type table](https://gtfs.org/schedule/reference/#routestxt)
     ©Mobility Data, distributed under
