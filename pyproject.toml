@@ -3,11 +3,11 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools>=61.0.0", "wheel"]
 
 [project]
-name = "transport_performance"
+name = "assess_gtfs"
 authors = [
     {name = "Data Science Campus", email = "datasciencecampus@ons.gov.uk"}
 ]
-description = "Measuring the performance of transport networks around urban centres"
+description = "Inspect & validate General Transit Feed Specification"
 readme = "README.md"
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -29,8 +29,8 @@ include-package-data = true
 where = ["src"]
 
 [project.urls]
-Repository = "https://github.com/datasciencecampus/transport-network-performance"
-"Bug tracker" = "https://github.com/datasciencecampus/transport-network-performance/issues"
+Repository = "https://github.com/datasciencecampus/assess_gtfs"
+"Bug tracker" = "https://github.com/datasciencecampus/assess_gtfs/issues"
 
 # `coverage` configurations
 [tool.coverage.run]
