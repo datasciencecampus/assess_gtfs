@@ -36,7 +36,6 @@ dependencies = [
     'plotly',
     'pretty_html_table',
     'pyprojroot',
-    'r5py',
     'requests',
     'tqdm',
 ]
@@ -47,6 +46,7 @@ test = [
     'pytest < 8.0.0',
     'pytest-lazy-fixture',
     'pytest-mock',
+    'r5py', # specifically for test_gtfs_utils.py::TestBboxFilterGtfs::test_bbox_filter_gtfs_to_date_builds_network
 ]
 docs = [
     'ipykernel==6.23.1',
