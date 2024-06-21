@@ -1,3 +1,0 @@
-[pydocstyle]
-# Rule definitions: http://www.pydocstyle.org/en/2.1.1/error_codes.html
-convention = numpy
