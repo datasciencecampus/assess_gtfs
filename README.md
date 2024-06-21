@@ -15,7 +15,7 @@ risk.
 <!-- *Describe what this repo contains and what the project is.* -->
 
 `assess_gtfs` provides a method for inspecting and validating General Transit
-Feed Specification. 
+Feed Specification.
 
 ## Developers
 We welcome contributions from others. Please check out our
@@ -26,7 +26,7 @@ We welcome contributions from others. Please check out our
 *Describe technical set-up. Such as the required dependencies.*
 
 This package is designed to work with python 3.9.13. Full functionality is
-tested on macos only. 
+tested on macos only.
 
 
 ## Usage

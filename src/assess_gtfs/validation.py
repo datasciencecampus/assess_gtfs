@@ -24,17 +24,10 @@ from assess_gtfs.cleaners import (
     clean_multiple_stop_fast_travel_warnings,
 )
 from assess_gtfs.gtfs_utils import filter_gtfs
-from assess_gtfs.report.report_utils import (
-    TemplateHTML,
-    _set_up_report_dir,
-)
+from assess_gtfs.report.report_utils import TemplateHTML, _set_up_report_dir
 from assess_gtfs.routes import (
     get_saved_route_type_lookup,
     scrape_route_type_lookup,
-)
-from assess_gtfs.validators import (
-    validate_travel_between_consecutive_stops,
-    validate_travel_over_multiple_stops,
 )
 from assess_gtfs.utils.constants import PKG_PATH
 from assess_gtfs.utils.defence import (
@@ -46,6 +39,10 @@ from assess_gtfs.utils.defence import (
     _enforce_file_extension,
     _is_expected_filetype,
     _type_defence,
+)
+from assess_gtfs.validators import (
+    validate_travel_between_consecutive_stops,
+    validate_travel_over_multiple_stops,
 )
 
 

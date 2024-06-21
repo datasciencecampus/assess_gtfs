@@ -10,7 +10,6 @@ import pytest
 from _pytest.python_api import RaisesContext
 from pyprojroot import here
 
-from assess_gtfs.validation import GtfsInstance
 from assess_gtfs.utils.defence import (
     _check_attribute,
     _check_column_in_df,
@@ -23,6 +22,7 @@ from assess_gtfs.utils.defence import (
     _is_expected_filetype,
     _type_defence,
 )
+from assess_gtfs.validation import GtfsInstance
 
 # INFO on the use of 'does_not_raise'
 # https://docs.pytest.org/en/6.2.x/example/parametrize.html...#parametrizing...

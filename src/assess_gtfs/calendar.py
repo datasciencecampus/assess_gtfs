@@ -4,10 +4,7 @@ from copy import deepcopy
 
 import pandas as pd
 
-from assess_gtfs.utils.defence import (
-    _check_column_in_df,
-    _type_defence,
-)
+from assess_gtfs.utils.defence import _check_column_in_df, _type_defence
 
 
 def create_calendar_from_dates(calendar_dates: pd.DataFrame) -> pd.DataFrame:

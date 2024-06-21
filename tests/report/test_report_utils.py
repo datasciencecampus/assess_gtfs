@@ -7,10 +7,7 @@ import re
 import pytest
 from pyprojroot import here
 
-from assess_gtfs.report.report_utils import (
-    TemplateHTML,
-    _set_up_report_dir,
-)
+from assess_gtfs.report.report_utils import TemplateHTML, _set_up_report_dir
 
 
 @pytest.fixture(scope="function")
