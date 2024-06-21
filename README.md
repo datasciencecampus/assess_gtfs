@@ -1,15 +1,5 @@
 <!--- Badges start --->
-<img src="https://img.shields.io/badge/repo%20status-in%20development%20(caution)-red" alt="Repository status is still in development (caution required)"/>
-
-<img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/python-package-mac.yml/badge.svg" alt="Build status badge on mac"/>
-
-<img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/python-package-linux.yml/badge.svg" alt="Build status badge on linux"/>
-
-<img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/python-package-windows.yml/badge.svg" alt="Build status badge on windows"/>
-
-<img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/integration-tests.yml/badge.svg" alt="Integration Tests"/>
-
-<img src="https://codecov.io/github/datasciencecampus/assess_gtfs/graph/badge.svg?token=iEWElAdksI" alt="Codecov coverage result"/>
+<img src="https://img.shields.io/badge/repo%20status-in%20development%20(caution)-red" alt="Repository status is still in development (caution required)"/><img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/python-package-mac.yml/badge.svg" alt="Build status badge on mac"/><img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/python-package-linux.yml/badge.svg" alt="Build status badge on linux"/><img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/python-package-windows.yml/badge.svg" alt="Build status badge on windows"/><img src="https://github.com/datasciencecampus/assess_gtfs/actions/workflows/integration-tests.yml/badge.svg" alt="Integration Tests"/><img src="https://codecov.io/github/datasciencecampus/assess_gtfs/graph/badge.svg?token=iEWElAdksI" alt="Codecov coverage result"/>
 <!--- Badges end --->
 
 <img src="https://github.com/datasciencecampus/awesome-campus/blob/master/ons_dsc_logo.png">
