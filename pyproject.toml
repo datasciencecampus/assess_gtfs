@@ -51,6 +51,8 @@ test = [
 docs = [
     'ipykernel==6.23.1',
     'jupyterlab',
+    'mapclassify', # for gdf.explore() in tutorial
+    'matplotlib', # for gdf.explore() in tutorial
     'nbformat>=4.2.0',
     'quartodoc',
 ]
