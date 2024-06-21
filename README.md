@@ -53,10 +53,15 @@ Once completed, activate the environment:
 ```
 conda activate assess-gtfs
 ```
-Install the python requirements:
+Install the python package with dependencies:
 ```
-pip install -r requirements.txt
+pip install .
 ```
+If contributing to `assess_gtfs`, install optional dependencies:
+```
+pip install -e '.[test,docs]'
+```
+
 Additional Java dependencies are required for full functionality. See the
 [contributing guidance](./CONTRIBUTING.md) for assistance.
 
