@@ -1,13 +1,13 @@
 ---
-title: How-To
-listing:
-    type: table
-    contents:
-        - "/**/index.qmd"
-    fields: [title, description, reading-time]
-    sort: title
-    sort-ui: true
-    filter-ui: true
+title: "Get Public Transit Schedule Data (GTFS)"
+description: Instructions on retrieving public transit schedule GTFS data.
+date-modified: 05/21/2024   # must be in MM/DD/YYYY format
+categories: ["How-To"]  # see https://diataxis.fr/tutorials-how-to/#tutorials-how-to, delete as appropriate
+toc: true
+date-format: iso
 ---
 
-These pages are short step-by-step instructions on how-to get something done, in particular retrieve the required input data for `transport_performance`.
+🚧 Page under construction 🚧
+
+These pages are short step-by-step instructions on how-to get something done,
+in particular retrieve the required input data for `assess_gtfs`.
