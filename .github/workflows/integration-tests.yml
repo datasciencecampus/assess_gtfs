@@ -40,6 +40,6 @@ jobs:
     - name: Check Java Install
       run: |
         java --version
-    - name: Run Integration Tests Only
+    - name: Run All tests, including integration & sanitycheck
       run: |
         pytest --runinteg --sanitycheck
