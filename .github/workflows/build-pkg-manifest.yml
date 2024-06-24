@@ -1,0 +1,56 @@
+# Runs the test suite. Uses hatch to build the distribution. Publish to PyPI.
+# Triggered on tagged release.
+
+
+name: Build Package
+on:
+  push:
+    tags:
+      - v*.*.*
+jobs:
+  build:
+    name: Integration
+    runs-on: ubuntu-latest
+    environment:
+        name: pypi
+        url: https://pypi.org/p/assess-gtfs
+    permissions:
+        id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+        contents: write
+        pages: write
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # sha for 4.1.7
+    - name: Set up Python 3.11
+      uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d  # sha for 5.1.0
+      with:
+        python-version: 3.11
+        cache: "pip"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install '.[test,dev]'
+    - name: Install java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11.0.21'
+    - name: Check Java Install
+      run: |
+        java --version
+    - name: Run All tests, including integration & sanitycheck
+      run: |
+        pytest --runinteg --sanitycheck
+    - name: Install hatch
+      run: |
+        pip install hatch
+    - name: Build a binary wheel and a source tarball
+      run: |
+        hatch build
+    - name: Store the distribution
+      uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # sha for v4.3.3
+      with:
+        name: python-package-distributions
+        path: ./dist/*
