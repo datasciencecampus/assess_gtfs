@@ -1,4 +1,4 @@
-# Runs the test suite. Uses hatch to build the distribution. Publish to PyPI.
+# Runs the test suite. Uses hatch to build the distribution.
 # Triggered on tagged release.
 
 
