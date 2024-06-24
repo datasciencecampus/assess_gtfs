@@ -14,9 +14,9 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # sha for 4.1.7
     - name: Set up Python ${{ env.PYTHON_VERSION }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d  # sha for 5.1.0
       with:
         python-version: ${{ env.PYTHON_VERSION }}
     - name: Install dependencies
@@ -24,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install '.[docs]'
     - name: Install java
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9 # sha for 4.2.1
       with:
         distribution: 'temurin'
         java-version: '11.0.21'
@@ -40,9 +40,9 @@ jobs:
       run: |
         python -m quartodoc build
     - name: Set up Quarto
-      uses: quarto-dev/quarto-actions/setup@v2
+      uses: quarto-dev/quarto-actions/setup@c1b50d36cf3c22b3dc7e530bd1b36634e824e545 # sha for v2.1.4
     - name: Render and Publish
-      uses: quarto-dev/quarto-actions/publish@v2
+      uses: quarto-dev/quarto-actions/publish@c1b50d36cf3c22b3dc7e530bd1b36634e824e545 # sha for v2.1.4
       with:
         target: gh-pages
       env:

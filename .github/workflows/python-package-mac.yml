@@ -21,9 +21,9 @@ jobs:
         python-version: ["3.11"]
         os: ["macos-12"]
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # sha for 4.1.7
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d  # sha for 5.1.0
       with:
         cache: 'pip'
         python-version: ${{ matrix.python-version }}
@@ -32,7 +32,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e '.[test]'
     - name: pre-commit
-      uses: actions/cache@v3
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # sha for v4.0.2
       with:
         path: ~/.cache/pre-commit/
         key: pre-commit-4|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
@@ -45,7 +45,7 @@ jobs:
         coverage report
         coverage xml
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
+      uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673 # sha for v4.5.0
       with:
         file: ./coverage.xml
         flags: unittests
