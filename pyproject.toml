@@ -39,7 +39,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: GIS",
 ]
 requires-python = ">=3.11"
-version = "0.0.3"
+version = "0.0.4"
 
 dependencies = [
     'beautifulsoup4',
