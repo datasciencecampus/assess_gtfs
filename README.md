@@ -21,25 +21,13 @@ We welcome contributions from others. Please check out our
 [code of conduct](CODE_OF_CONDUCT.md) and
 [contributing guidance](CONTRIBUTING.md###Set-up).
 
-## Installation
-*Describe technical set-up. Such as the required dependencies.*
-
-This package is designed to work with python 3.9.13. Full functionality is
-tested on macos only.
-
-
 ## Usage
 <!-- *Explain how to use the things in the repo.* -->
 
 ### Installation
 
-Currently, `assess_gtfs` is not published to PyPI or Conda Forge. To
-use the code, we suggest forking the repository and cloning the fork to your
-development environment.
-
-```
-git clone <INSERT_CLONE_URL>/assess_gtfs.git
-```
+This package is designed to work with python 3.11. Full functionality is
+tested on macos only.
 
 We recommend running the package with a virtual environment such as
 [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
@@ -47,19 +35,16 @@ or [venv](https://docs.python.org/3/library/venv.html).
 
 With conda:
 ```
-conda create -n assess-gtfs python=3.9.13 -y
+conda create -n assess-gtfs python=3.11 -y
 ```
 Once completed, activate the environment:
 ```
 conda activate assess-gtfs
 ```
-Install the python package with dependencies:
+Install the python package with required dependencies:
+
 ```
-pip install .
-```
-If contributing to `assess_gtfs`, install optional dependencies:
-```
-pip install -e '.[test,docs]'
+pip install assess-gtfs
 ```
 
 Additional Java dependencies are required for full functionality. See the
