@@ -470,16 +470,16 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="assess_gtfs.validation.GtfsInstance.clean_feed" class="level5">
 <h5 class="anchored" data-anchor-id="assess_gtfs.validation.GtfsInstance.clean_feed">clean_feed</h5>
-<p><code>validation.GtfsInstance.clean_feed(validate=False, fast_travel=True)</code></p>
+<p><code>validation.GtfsInstance.clean_feed(validate=False, fast_travel=False)</code></p>
 <p>Attempt to clean feed using <code>gtfs_kit</code>.</p>
 <section id="parameters-1" class="level6">
 <h6 class="anchored" data-anchor-id="parameters-1">Parameters</h6>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 8%">
-<col style="width: 63%">
-<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 69%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -493,14 +493,14 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><code>validate</code></td>
 <td>bool</td>
-<td>Whether or not to validate the dataframe before cleaning</td>
+<td>Whether or not to validate the dataframe before cleaning, by default False.</td>
 <td><code>False</code></td>
 </tr>
 <tr class="even">
 <td><code>fast_travel</code></td>
 <td>bool</td>
-<td>Whether or not to clean warnings related to fast travel.</td>
-<td><code>True</code></td>
+<td>Whether or not to clean warnings related to fast travel, by default False.</td>
+<td><code>False</code></td>
 </tr>
 </tbody>
 </table>
@@ -689,7 +689,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="assess_gtfs.validation.GtfsInstance.html_report" class="level5">
 <h5 class="anchored" data-anchor-id="assess_gtfs.validation.GtfsInstance.html_report">html_report</h5>
-<p><code>validation.GtfsInstance.html_report(report_dir='outputs', overwrite=False, summary_type='mean', extended_validation=True, clean_feed=True)</code></p>
+<p><code>validation.GtfsInstance.html_report(report_dir='outputs', overwrite=False, summary_type='mean', extended_validation=False, clean_feed=True)</code></p>
 <p>Generate a HTML report describing the GTFS data.</p>
 <section id="parameters-4" class="level6">
 <h6 class="anchored" data-anchor-id="parameters-4">Parameters</h6>
@@ -730,8 +730,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><code>extended_validation</code></td>
 <td>bool</td>
-<td>Whether or not to create extended reports for gtfs validation errors/warnings, by default True</td>
-<td><code>True</code></td>
+<td>Whether or not to create extended reports for gtfs validation errors/warnings, by default False</td>
+<td><code>False</code></td>
 </tr>
 <tr class="odd">
 <td><code>clean_feed</code></td>
@@ -783,16 +783,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="assess_gtfs.validation.GtfsInstance.is_valid" class="level5">
 <h5 class="anchored" data-anchor-id="assess_gtfs.validation.GtfsInstance.is_valid">is_valid</h5>
-<p><code>validation.GtfsInstance.is_valid(far_stops=True)</code></p>
+<p><code>validation.GtfsInstance.is_valid(far_stops=False)</code></p>
 <p>Check a feed is valid with <code>gtfs_kit</code>.</p>
 <section id="parameters-5" class="level6">
 <h6 class="anchored" data-anchor-id="parameters-5">Parameters</h6>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 8%">
 <col style="width: 5%">
-<col style="width: 77%">
-<col style="width: 7%">
+<col style="width: 80%">
+<col style="width: 6%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -806,8 +806,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><code>far_stops</code></td>
 <td>bool</td>
-<td>Whether or not to perform validation for far stops (both between consecutive stops and over multiple stops)</td>
-<td><code>True</code></td>
+<td>Whether or not to perform validation for far stops (both between consecutive stops and over multiple stops), by default False.</td>
+<td><code>False</code></td>
 </tr>
 </tbody>
 </table>
