@@ -313,14 +313,15 @@ class GtfsInstance:
         self.file_list = file_list
         return self.file_list
 
-    def is_valid(self, far_stops: bool = True) -> pd.DataFrame:
+    def is_valid(self, far_stops: bool = False) -> pd.DataFrame:
         """Check a feed is valid with `gtfs_kit`.
 
         Parameters
         ----------
         far_stops : bool, optional
             Whether or not to perform validation for far stops (both
-            between consecutive stops and over multiple stops)
+            between consecutive stops and over multiple stops), by default
+            False.
 
         Returns
         -------
@@ -383,16 +384,18 @@ class GtfsInstance:
         return None
 
     def clean_feed(
-        self, validate: bool = False, fast_travel: bool = True
+        self, validate: bool = False, fast_travel: bool = False
     ) -> None:
         """Attempt to clean feed using `gtfs_kit`.
 
         Parameters
         ----------
         validate: bool, optional
-            Whether or not to validate the dataframe before cleaning
+            Whether or not to validate the dataframe before cleaning, by
+            default False.
         fast_travel: bool, optional
-            Whether or not to clean warnings related to fast travel.
+            Whether or not to clean warnings related to fast travel, by default
+            False.
 
         """
         _type_defence(fast_travel, "fast_travel", bool)
@@ -1383,7 +1386,7 @@ class GtfsInstance:
         report_dir: Union[str, pathlib.Path] = "outputs",
         overwrite: bool = False,
         summary_type: str = "mean",
-        extended_validation: bool = True,
+        extended_validation: bool = False,
         clean_feed: bool = True,
     ) -> None:
         """Generate a HTML report describing the GTFS data.
@@ -1400,7 +1403,7 @@ class GtfsInstance:
             default "mean"
         extended_validation : bool, optional
             Whether or not to create extended reports for gtfs validation
-            errors/warnings, by default True
+            errors/warnings, by default False
         clean_feed : bool, optional
             Whether or not to clean the feed before validating, by default True
 
