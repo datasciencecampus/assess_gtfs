@@ -48,8 +48,8 @@ dependencies = [
     'gtfs_kit==5.2.7',
     'haversine',
     'kaleido',
-    'numpy==1.26.4',
-    'pandas<2.1.0',
+    'numpy',
+    'pandas',
     'plotly',
     'pretty_html_table',
     'pyprojroot',
@@ -60,8 +60,7 @@ dependencies = [
 test = [
     'coverage',
     'pre-commit',
-    'pytest < 8.0.0',
-    'pytest-lazy-fixture',
+    'pytest',
     'pytest-mock',
     'r5py', # specifically for test_gtfs_utils.py::TestBboxFilterGtfs::test_bbox_filter_gtfs_to_date_builds_network
 ]
