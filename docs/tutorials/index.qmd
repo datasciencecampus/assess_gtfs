@@ -112,7 +112,7 @@ undertaking routing with public transport modalities.
 
 To do this, we will need to use a class from the `assess_gtfs`
 package called `MultiGtfsInstance`. Take a look at the
-<a href="../../reference/multi_validation.qmd#assess_gtfs.multi_validation.MultiGtfsInstance" target="_blank">`MultiGtfsInstance` API documentation</a> for full details on
+<a href="../../docs/reference/multi_validation.qmd#assess_gtfs.multi_validation.MultiGtfsInstance" target="_blank">`MultiGtfsInstance` API documentation</a> for full details on
 how this class works. You may wish to keep this page open for reference in
 later tasks.
 
@@ -313,7 +313,7 @@ print(f"Unfiltered feed is: {size_out}")
 ### By Bounding Box
 
 To help understand the requirements for spatially cropping a feed, inspect the
-[API documentation for the `filter_to_bbox()`](../../reference/multi_validation.qmd#assess_gtfs.multi_validation.MultiGtfsInstance.filter_to_bbox)
+[API documentation for the `filter_to_bbox()`](../../docs/reference/multi_validation.qmd#assess_gtfs.multi_validation.MultiGtfsInstance.filter_to_bbox)
 method.
 
 To perform this crop, we need to get a bounding box. This could be any boundary
@@ -556,10 +556,13 @@ or where the specification is violated.
 
 ```{python}
 feed.clean_feeds()
-feed.is_valid(validation_kwargs={"far_stops": False})
+feed.is_valid()
 ```
 
 :::
+
+You may note warnings printed to the console and whether a statement about
+whether a feed was successfully cleaned.
 
 ## Write Filtered Feed
 
@@ -609,10 +612,6 @@ Congratulations, you have successfully completed this tutorial. We have
 successfully examined the features, errors and warnings within a GTFS feed. We
 have also filtered the feed by bounding box and by date in order to reduce its
 size on disk.
-
-To continue learning how to work with the `assess_gtfs` package, it
-is suggested that you continue with the
-[OpenStreetMap tutorials](/docs/tutorials/osm/index.qmd)
 
 For any problems encountered with this tutorial or the `assess_gtfs`
 package, please open an issue on our [GitHub repository](https://github.com/datasciencecampus/transport-network-performance/issues).

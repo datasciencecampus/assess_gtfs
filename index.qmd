@@ -61,7 +61,7 @@ These docs are structured in accordance with the [Diátaxis][diataxis] framework
 <div class="grid-item item4 jumbotron">
 <p class="jumbotron-icon">📝</p>
 <p>Interested in learning how to use `assess_gtfs` by examples?</p>
-<a class="btn btn-primary btn-lg" href="./docs/tutorials/index.html" role="button">Tutorials</a>
+<a class="btn btn-primary btn-lg" href="./docs/tutorials/index.html" role="button">Tutorial</a>
 </div>
 <div class="grid-item item5 jumbotron">
 <p class="jumbotron-icon">📖</p>
