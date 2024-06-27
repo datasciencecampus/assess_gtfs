@@ -204,8 +204,8 @@ the feed?
 
 ### Hint
 
-Examine the `MultiGtfsInstance` docstring printed earlier and find the name of
-the parameter that controls the behaviour of `get_dates()`.
+Examine the `MultiGtfsInstance` api reference and find the name of the
+parameter that controls the behaviour of `get_dates()`.
 
 ### Solution
 
@@ -234,18 +234,15 @@ Check if the feed you've instantiated contains valid GTFS.
 
 ### Hint
 
-Check the docstring we printed earlier for an appropriate method. Depending
-upon the source of the GTFS, you may need to ensure that checking of fast
-travel is switched off. To turn off fast travel checks, pass the following
-dictionary to the method's appropriate argument: `{"far_stops": False}`. See
-the open issue [#183](https://github.com/datasciencecampus/transport-network-performance/issues/183).
+Check the api reference for `validation.GtfsInstance` for an appropriate
+method.
 
 ### Solution
 
 :::{.scrolling}
 
 ```{python}
-feed.is_valid(validation_kwargs={"far_stops": False})
+feed.is_valid()
 ```
 
 :::
@@ -276,7 +273,7 @@ interactive folium map.
 
 ### Hint
 
-Inspect the `MultiGtfsInstance` docstring for the appropriate method.
+Inspect the `MultiGtfsInstance` api reference for the appropriate method.
 
 ```{python}
 #| eval: false
@@ -463,7 +460,7 @@ calendar table to ensure it is populated.
 
 ### Hint
 
-Examine the `MultiGtfsInstance` docstring to find the appropriate method.
+Examine the `MultiGtfsInstance` api reference to find the appropriate method.
 Access the calendar DataFrame attribute from the same feed and print the first
 few rows.
 
@@ -503,8 +500,8 @@ Print 2 summary tables:
 
 ### Hint
 
-Examine the docstring help for `MultiGtfsInstance`. Use the appropriate methods
-to produce the summaries.
+Examine the api reference help for `MultiGtfsInstance`. Use the appropriate
+methods to produce the summaries.
 
 1. Use the default behaviour to produce the first table.
 2. Ensure that the appropriate method allowing stats for days of the week is
