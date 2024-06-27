@@ -297,7 +297,6 @@ class TestMultiGtfsInstance(object):
         assert n_out == n, f"Expected validity_df of len {n}, found {n_out}"
         assert np.array_equal(
             list(valid_df.iloc[4][["type", "message"]].values),
-            # (["warning", "Fast Travel Between Consecutive Stops"]),
             (
                 [
                     "error",
@@ -311,6 +310,17 @@ class TestMultiGtfsInstance(object):
         assert isinstance(
             multi_gtfs_fixture.validity_df, pd.DataFrame
         ), "validity_df not a df"
+        # run is valid but with fast travel logic
+        n = 14
+        extra_valid_df = multi_gtfs_fixture.is_valid(
+            validation_kwargs={"far_stops": True}
+        )
+        n_out = len(extra_valid_df)
+        assert n_out == n, f"Expected extra_valid_df of len {n}, found {n_out}"
+        assert np.array_equal(
+            list(extra_valid_df.iloc[4][["type", "message"]].values),
+            (["warning", "Fast Travel Between Consecutive Stops"]),
+        )
 
     def test_validate_empty_feeds(self, multi_gtfs_fixture):
         """Tests for validate_empty_feeds."""
