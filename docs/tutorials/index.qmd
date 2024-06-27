@@ -561,8 +561,8 @@ feed.is_valid()
 
 :::
 
-You may note warnings printed to the console and whether a statement about
-whether a feed was successfully cleaned.
+You may note warnings printed to the console and a statement about whether a
+feed was successfully cleaned.
 
 ## Write Filtered Feed
 
