@@ -16,7 +16,11 @@ zip archives.
 `assess_gtfs` was written to prepare GTFS feeds for a comparison of British &
 French [urban transport performance][tp-map]. This guide covers ingesting data
 from those territories. For other global territory data, consult the
-[GTFS data index][gtfs-data].q
+[GTFS data index][gtfs-data].
+
+We recommend keeping your feed in your project directory under "data/external".
+If you are using git version control, ensure that this directory is
+[git-ignored][gitignore].
 
 ## British GTFS
 
@@ -54,3 +58,4 @@ quality of a file or feed.
 [valid tool]: https://transport.data.gouv.fr/validation
 [tp-map]: https://datasciencecampus.github.io/transport-performance-visual/
 [gtfs-data]: https://gtfs.org/resources/data/
+[gitignore]: https://git-scm.com/docs/gitignore
