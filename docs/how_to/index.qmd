@@ -1,13 +1,56 @@
 ---
 title: "Get Public Transit Schedule Data (GTFS)"
 description: Instructions on retrieving public transit schedule GTFS data.
-date-modified: 05/21/2024   # must be in MM/DD/YYYY format
+date-modified: 06/28/2024   # must be in MM/DD/YYYY format
 categories: ["How-To"]  # see https://diataxis.fr/tutorials-how-to/#tutorials-how-to, delete as appropriate
 toc: true
 date-format: iso
 ---
 
-🚧 Page under construction 🚧
-
 These pages are short step-by-step instructions on how-to get something done,
 in particular retrieve the required input data for `assess_gtfs`.
+
+Regardless of the source of GTFS, `assess_gtfs` expects feeds to be compressed
+zip archives.
+
+`assess_gtfs` was written to prepare GTFS feeds for a comparison of British &
+French [urban transport performance][tp-map]. This guide covers ingesting data
+from those territories. For other global territory data, consult the
+[GTFS data index][gtfs-data].q
+
+## British GTFS
+
+### Bus
+
+1. Access the [Bus Open Data Service][bods]
+2. Click on "Timetables data"
+3. Create an account (if needed)
+4. Navigate to "Download regional and national data sets in GTFS format"
+5. Select the region of interest and click the link to download the file.
+
+### Rail
+
+1. Access [National Rail Data Portal][nrdp]
+2. Create or register for an account (if needed)
+3. Access the GB timetable GTFS from the daily feed section
+
+## French GTFS
+
+1. Visit [transport.data.gouv.fr][transport.data.gouv.fr] for bus and rail GTFS
+2. Search for the region of France that you wish to acquire GTFS for.
+3. Alternatively, you can browse the available data by map, table or read the
+API documentation under the section "You can also".
+4. Once you have selected an entry, ensure that it is tagged as "gtfs", but not
+"gtfs-r", which stands for "realtime".
+5. Make note of the indicated transit modality and click "Download" to save the
+zip archive to disk.
+6. Optionally, use the site's [validation tool][valid tool] to check the
+quality of a file or feed.
+
+[bods]: https://data.bus-data.dft.gov.uk/downloads/
+[ntrod]: https://publicdatafeeds.networkrail.co.uk/ntrod/welcome
+[nrdp]: https://opendata.nationalrail.co.uk/
+[transport.data.gouv.fr]: https://transport.data.gouv.fr/?locale=en
+[valid tool]: https://transport.data.gouv.fr/validation
+[tp-map]: https://datasciencecampus.github.io/transport-performance-visual/
+[gtfs-data]: https://gtfs.org/resources/data/
