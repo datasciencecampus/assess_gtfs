@@ -144,7 +144,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#british-gtfs" id="toc-british-gtfs" class="nav-link active" data-scroll-target="#british-gtfs">British GTFS</a>
+  <ul class="collapse">
+  <li><a href="#bus" id="toc-bus" class="nav-link" data-scroll-target="#bus">Bus</a></li>
+  <li><a href="#rail" id="toc-rail" class="nav-link" data-scroll-target="#rail">Rail</a></li>
+  </ul></li>
+  <li><a href="#french-gtfs" id="toc-french-gtfs" class="nav-link" data-scroll-target="#french-gtfs">French GTFS</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -171,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-05-21</p>
+      <p class="date-modified">2024-06-28</p>
     </div>
   </div>
     
@@ -182,10 +193,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>🚧 Page under construction 🚧</p>
 <p>These pages are short step-by-step instructions on how-to get something done, in particular retrieve the required input data for <code>assess_gtfs</code>.</p>
+<p>Regardless of the source of GTFS, <code>assess_gtfs</code> expects feeds to be compressed zip archives.</p>
+<p><code>assess_gtfs</code> was written to prepare GTFS feeds for a comparison of British &amp; French <a href="https://datasciencecampus.github.io/transport-performance-visual/">urban transport performance</a>. This guide covers ingesting data from those territories. For other global territory data, consult the <a href="https://gtfs.org/resources/data/">GTFS data index</a>.</p>
+<p>We recommend keeping your feed in your project directory under “data/external”. If you are using git version control, ensure that this directory is <a href="https://git-scm.com/docs/gitignore">git-ignored</a>.</p>
+<section id="british-gtfs" class="level2">
+<h2 class="anchored" data-anchor-id="british-gtfs">British GTFS</h2>
+<section id="bus" class="level3">
+<h3 class="anchored" data-anchor-id="bus">Bus</h3>
+<ol type="1">
+<li>Access the <a href="https://data.bus-data.dft.gov.uk/downloads/">Bus Open Data Service</a></li>
+<li>Click on “Timetables data”</li>
+<li>Create an account (if needed)</li>
+<li>Navigate to “Download regional and national data sets in GTFS format”</li>
+<li>Select the region of interest and click the link to download the file.</li>
+</ol>
+</section>
+<section id="rail" class="level3">
+<h3 class="anchored" data-anchor-id="rail">Rail</h3>
+<ol type="1">
+<li>Access <a href="https://opendata.nationalrail.co.uk/">National Rail Data Portal</a></li>
+<li>Create or register for an account (if needed)</li>
+<li>Access the GB timetable GTFS from the daily feed section</li>
+</ol>
+</section>
+</section>
+<section id="french-gtfs" class="level2">
+<h2 class="anchored" data-anchor-id="french-gtfs">French GTFS</h2>
+<ol type="1">
+<li>Visit <a href="https://transport.data.gouv.fr/?locale=en">transport.data.gouv.fr</a> for bus and rail GTFS</li>
+<li>Search for the region of France that you wish to acquire GTFS for.</li>
+<li>Alternatively, you can browse the available data by map, table or read the API documentation under the section “You can also”.</li>
+<li>Once you have selected an entry, ensure that it is tagged as “gtfs”, but not “gtfs-r”, which stands for “realtime”.</li>
+<li>Make note of the indicated transit modality and click “Download” to save the zip archive to disk.</li>
+<li>Optionally, use the site’s <a href="https://transport.data.gouv.fr/validation">validation tool</a> to check the quality of a file or feed.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
