@@ -267,18 +267,25 @@ class TestMultiGtfsInstance(object):
 
     def test_clean_feeds_on_pass(self, multi_gtfs_fixture):
         """General tests for .clean_feeds()."""
+        # check with far stops logic first
+        extra_valid_df = multi_gtfs_fixture.is_valid(
+            validation_kwargs={"far_stops": True}
+        )
+        n = 14
+        n_out = len(extra_valid_df)
+        assert n_out == n, f"Expected extra_valid_df of len {n}, found {n_out}"
         # validate and do quick check on validity_df
         valid_df = multi_gtfs_fixture.is_valid()
         n = 12
         n_out = len(valid_df)
-        assert n_out == n, f"Expected validity_df of len {n}, found {n_out}"
+        assert n_out == n, f"Expected valid_df of len {n}, found {n_out}"
         # clean feed
         multi_gtfs_fixture.clean_feeds()
         # ensure cleaning has occured
         new_valid = multi_gtfs_fixture.is_valid()
         n = 11
         n_out = len(new_valid)
-        assert n_out == n, f"Expected validity_df of len {n}, found {n_out}"
+        assert n_out == n, f"Expected valid_df of len {n}, found {n_out}"
         assert np.array_equal(
             list(new_valid.iloc[4][["type", "table"]].values),
             ["error", "routes"],
@@ -294,7 +301,7 @@ class TestMultiGtfsInstance(object):
         valid_df = multi_gtfs_fixture.is_valid()
         n = 12
         n_out = len(valid_df)
-        assert n_out == n, f"Expected validity_df of len {n}, found {n_out}"
+        assert n_out == n, f"Expected valid_df of len {n}, found {n_out}"
         assert np.array_equal(
             list(valid_df.iloc[4][["type", "message"]].values),
             (
