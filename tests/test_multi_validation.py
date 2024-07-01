@@ -262,30 +262,23 @@ class TestMultiGtfsInstance(object):
 
     def test_clean_feeds_defences(self, multi_gtfs_fixture):
         """Defensive tests for .clean_feeds()."""
-        with pytest.raises(TypeError, match=".*clean_kwargs.*dict.*bool"):
+        with pytest.raises(TypeError, match=".*cleansers.*dict.*bool"):
             multi_gtfs_fixture.clean_feeds(True)
 
     def test_clean_feeds_on_pass(self, multi_gtfs_fixture):
         """General tests for .clean_feeds()."""
-        # check with far stops logic first
-        extra_valid_df = multi_gtfs_fixture.is_valid(
-            validation_kwargs={"far_stops": True}
-        )
-        n = 14
-        n_out = len(extra_valid_df)
-        assert n_out == n, f"Expected extra_valid_df of len {n}, found {n_out}"
         # validate and do quick check on validity_df
         valid_df = multi_gtfs_fixture.is_valid()
-        n = 12
+        n = 14
         n_out = len(valid_df)
-        assert n_out == n, f"Expected valid_df of len {n}, found {n_out}"
+        assert n_out == n, f"Expected validity_df of len {n}, found {n_out}"
         # clean feed
         multi_gtfs_fixture.clean_feeds()
         # ensure cleaning has occured
-        new_valid = multi_gtfs_fixture.is_valid()
-        n = 11
-        n_out = len(new_valid)
-        assert n_out == n, f"Expected valid_df of len {n}, found {n_out}"
+        new_valid = multi_gtfs_fixture.is_valid(
+            validators={"core_validation": {}}
+        )
+        assert len(new_valid) == 12
         assert np.array_equal(
             list(new_valid.iloc[4][["type", "table"]].values),
             ["error", "routes"],
@@ -293,23 +286,18 @@ class TestMultiGtfsInstance(object):
 
     def test_is_valid_defences(self, multi_gtfs_fixture):
         """Defensive tests for .is_valid()."""
-        with pytest.raises(TypeError, match=".*validation_kwargs.*dict.*bool"):
+        with pytest.raises(TypeError, match=".*validators.*dict.*bool"):
             multi_gtfs_fixture.is_valid(True)
 
     def test_is_valid_on_pass(self, multi_gtfs_fixture):
         """General tests for is_valid()."""
         valid_df = multi_gtfs_fixture.is_valid()
-        n = 12
+        n = 14
         n_out = len(valid_df)
-        assert n_out == n, f"Expected valid_df of len {n}, found {n_out}"
+        assert n_out == n, f"Expected validity_df of len {n}, found {n_out}"
         assert np.array_equal(
             list(valid_df.iloc[4][["type", "message"]].values),
-            (
-                [
-                    "error",
-                    "Invalid route_type; maybe has extra space characters",
-                ]
-            ),
+            (["warning", "Fast Travel Between Consecutive Stops"]),
         )
         assert hasattr(
             multi_gtfs_fixture, "validity_df"
@@ -317,17 +305,6 @@ class TestMultiGtfsInstance(object):
         assert isinstance(
             multi_gtfs_fixture.validity_df, pd.DataFrame
         ), "validity_df not a df"
-        # run is valid but with fast travel logic
-        n = 14
-        extra_valid_df = multi_gtfs_fixture.is_valid(
-            validation_kwargs={"far_stops": True}
-        )
-        n_out = len(extra_valid_df)
-        assert n_out == n, f"Expected extra_valid_df of len {n}, found {n_out}"
-        assert np.array_equal(
-            list(extra_valid_df.iloc[4][["type", "message"]].values),
-            (["warning", "Fast Travel Between Consecutive Stops"]),
-        )
 
     def test_validate_empty_feeds(self, multi_gtfs_fixture):
         """Tests for validate_empty_feeds."""
