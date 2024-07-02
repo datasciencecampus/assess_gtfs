@@ -13,13 +13,13 @@ from geopandas import GeoDataFrame
 from plotly.graph_objects import Figure as PlotlyFigure
 from pyprojroot import here
 
+from assess_gtfs.utils.constants import PKG_PATH
 from assess_gtfs.validation import (
     GtfsInstance,
     _convert_multi_index_to_single,
     _create_map_title_text,
     _get_intermediate_dates,
 )
-from assess_gtfs.utils.constants import PKG_PATH
 
 GTFS_FIX_PTH = os.path.join(
     "tests", "data", "gtfs", "newport-20230613_gtfs.zip"

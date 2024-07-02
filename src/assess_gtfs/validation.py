@@ -21,14 +21,8 @@ from pretty_html_table import build_table
 import assess_gtfs.cleaners as cleaners
 import assess_gtfs.validators as gtfs_validators
 from assess_gtfs.calendar import create_calendar_from_dates
-from assess_gtfs.gtfs_utils import (
-    _function_pipeline,
-    filter_gtfs,
-)
-from assess_gtfs.report.report_utils import (
-    TemplateHTML,
-    _set_up_report_dir,
-)
+from assess_gtfs.gtfs_utils import _function_pipeline, filter_gtfs
+from assess_gtfs.report.report_utils import TemplateHTML, _set_up_report_dir
 from assess_gtfs.routes import (
     get_saved_route_type_lookup,
     scrape_route_type_lookup,

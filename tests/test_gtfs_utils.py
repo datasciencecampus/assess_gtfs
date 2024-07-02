@@ -19,10 +19,7 @@ from assess_gtfs.gtfs_utils import (
     filter_gtfs,
     filter_gtfs_around_trip,
 )
-from assess_gtfs.validation import (
-    VALIDATE_FEED_FUNC_MAP,
-    GtfsInstance,
-)
+from assess_gtfs.validation import VALIDATE_FEED_FUNC_MAP, GtfsInstance
 
 # location of GTFS test fixture
 GTFS_FIX_PTH = os.path.join(
