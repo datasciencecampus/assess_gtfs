@@ -250,7 +250,7 @@ class TestGtfsInstance(object):
         assert (
             len(new_valid[new_valid.message == "Trip has no stop times"]) == 1
         ), "gtfs-kit failed to recognise invalid service_id"
-        assert len(new_valid) == 10, "Validation table not expected size"
+        assert len(new_valid) == 11, "Validation table not expected size"
 
     @pytest.mark.sanitycheck
     def test_routes_unmatched_ids(self, newp_gtfs_fixture):
@@ -289,7 +289,7 @@ class TestGtfsInstance(object):
         assert (
             len(new_valid[new_valid.message == "Route has no trips"]) == 1
         ), "gtfs-kit failed to recognise that there are routes with no trips"
-        assert len(new_valid) == 9, "Validation table not expected size"
+        assert len(new_valid) == 10, "Validation table not expected size"
 
     @pytest.mark.sanitycheck
     def test_unmatched_service_id_behaviour(self, newp_gtfs_fixture):
