@@ -584,9 +584,7 @@ class Test_IsExpectedFiletype(object):
             match="`gtfs.zip` expected file extension .tiff. Found .zip",
         ):
             _is_expected_filetype(
-                os.path.join(
-                    "tests", "data", "gtfs", "newport-20230613_gtfs.zip"
-                ),
+                os.path.join("tests", "data", "newport-20230613_gtfs.zip"),
                 param_nm="gtfs.zip",
                 check_existing=True,
                 exp_ext=".tiff",
@@ -615,7 +613,7 @@ class Test_IsExpectedFiletype(object):
             ),
         ):
             _is_expected_filetype(
-                "tests/data/gtfs/report/html_template.html",
+                "tests/data/report/html_template.html",
                 ".html",
                 check_existing=True,
                 exp_ext=[".zip", ".gif", ".pdf"],
@@ -631,7 +629,7 @@ class Test_IsExpectedFiletype(object):
         )
         assert result is None
         result = _is_expected_filetype(
-            "tests/data/gtfs/report/html_template.html",
+            "tests/data/report/html_template.html",
             ".html",
             check_existing=True,
             exp_ext=[".zip", ".gif", ".pbf", ".html"],

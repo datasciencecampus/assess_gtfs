@@ -115,7 +115,7 @@ class TestIOPickle:
                 ),
             ),
             (
-                here("tests/data/gtfs/report/html_template.html"),  # wrong ext
+                here("tests/data/report/html_template.html"),  # wrong ext
                 pytest.raises(
                     ValueError,
                     match=re.escape(

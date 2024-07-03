@@ -24,7 +24,7 @@ def multi_gtfs_paths():
     """Small test fixture for GTFS paths."""
     paths = [
         "tests/data/chester-20230816-small_gtfs.zip",
-        "tests/data/gtfs/newport-20230613_gtfs.zip",
+        "tests/data/newport-20230613_gtfs.zip",
     ]
     return paths
 

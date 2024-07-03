@@ -21,9 +21,7 @@ from assess_gtfs.gtfs_utils import (
 from assess_gtfs.validation import GtfsInstance
 
 # location of GTFS test fixture
-GTFS_FIX_PTH = os.path.join(
-    "tests", "data", "gtfs", "newport-20230613_gtfs.zip"
-)
+GTFS_FIX_PTH = os.path.join("tests", "data", "newport-20230613_gtfs.zip")
 
 
 class TestFilterGtfs(object):
