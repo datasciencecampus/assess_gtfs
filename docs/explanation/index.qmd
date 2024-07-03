@@ -2,4 +2,4 @@
 title: Explanation
 ---
 
-These explanation pages provide an understanding of the `assess_gtfs` package.
+These explanation pages provide an understanding of the `assess-gtfs` package.

@@ -61,7 +61,7 @@ metadata-files:
 
 quartodoc:
   title: API reference
-  package: transport_performance
+  package: assess-gtfs
   dir: docs/reference
   sidebar: docs/_sidebar.yml
   sections:

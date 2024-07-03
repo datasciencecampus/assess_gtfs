@@ -1,6 +1,6 @@
 ---
 title: "GTFS"
-description: Learn how to inspect, validate, and clean General Transit Feed Specification inputs using the `assess_gtfs` package.
+description: Learn how to inspect, validate, and clean General Transit Feed Specification inputs using the `assess-gtfs` package.
 date-modified: 05/21/2024  # must be in MM/DD/YYYY format
 categories: ["Tutorial"]  # see https://diataxis.fr/tutorials-how-to/#tutorials-how-to, delete as appropriate
 toc: true
@@ -35,7 +35,7 @@ To complete this tutorial, you will need:
 
 * python 3.9
 * Stable internet connection
-* Installed the `assess_gtfs` package (see the
+* Installed the `assess-gtfs` package (see the
 [getting started explanation](/docs/getting_started/index.qmd) for help)
 
 ## Working With GTFS
@@ -110,7 +110,7 @@ formats and contain multiple text files. These files can be read together, a
 bit like a relational database, to produce a feed object that is useful when
 undertaking routing with public transport modalities.
 
-To do this, we will need to use a class from the `assess_gtfs`
+To do this, we will need to use a class from the `assess-gtfs`
 package called `MultiGtfsInstance`. Take a look at the
 <a href="../../docs/reference/multi_validation.qmd#assess_gtfs.multi_validation.MultiGtfsInstance" target="_blank">`MultiGtfsInstance` API documentation</a> for full details on
 how this class works. You may wish to keep this page open for reference in
@@ -613,5 +613,5 @@ successfully examined the features, errors and warnings within a GTFS feed. We
 have also filtered the feed by bounding box and by date in order to reduce its
 size on disk.
 
-For any problems encountered with this tutorial or the `assess_gtfs`
+For any problems encountered with this tutorial or the `assess-gtfs`
 package, please open an issue on our [GitHub repository](https://github.com/datasciencecampus/transport-network-performance/issues).

@@ -5,7 +5,7 @@
 
 <img src="https://github.com/datasciencecampus/awesome-campus/blob/master/ons_dsc_logo.png">
 
-# assess_gtfs
+# assess-gtfs
 
 <img src="/docs/_static/assess-gtfs.png"/ alt="assess-gtfs logo" width=200 style="display: block; margin-left: auto; margin-right: auto;">
 
@@ -16,7 +16,7 @@ risk.
 ## Introduction
 <!-- *Describe what this repo contains and what the project is.* -->
 
-`assess_gtfs` provides a method for inspecting and validating General Transit
+`assess-gtfs` provides a method for inspecting and validating General Transit
 Feed Specification.
 
 ## Developers
