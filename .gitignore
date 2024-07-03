@@ -187,7 +187,7 @@ docs/build/
 !docs/source/_templates/footer.html
 docs/_sidebar.yml
 docs/reference/
-!docs/_static/tp_logo_white_background.png
+!docs/_static/assess-gtfs.png
 !docs/explanation/**/*.PNG
 
 # PyBuilder
