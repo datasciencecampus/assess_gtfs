@@ -610,13 +610,13 @@ class Test_IsExpectedFiletype(object):
         with pytest.raises(
             ValueError,
             match=re.escape(
-                "`osm.pbf` expected file extension ['.zip', '.gif', '.pdf']. F"
-                "ound .pbf"
+                "`.html` expected file extension ['.zip', '.gif', '.pdf']. F"
+                "ound .html"
             ),
         ):
             _is_expected_filetype(
-                "tests/data/newport-2023-06-13.osm.pbf",
-                "osm.pbf",
+                "tests/data/gtfs/report/html_template.html",
+                ".html",
                 check_existing=True,
                 exp_ext=[".zip", ".gif", ".pdf"],
             )
@@ -631,10 +631,10 @@ class Test_IsExpectedFiletype(object):
         )
         assert result is None
         result = _is_expected_filetype(
-            "tests/data/newport-2023-06-13.osm.pbf",
-            "osm.pbf",
+            "tests/data/gtfs/report/html_template.html",
+            ".html",
             check_existing=True,
-            exp_ext=[".zip", ".gif", ".pbf"],
+            exp_ext=[".zip", ".gif", ".pbf", ".html"],
         )
         assert result is None
 

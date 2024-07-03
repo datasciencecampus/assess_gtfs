@@ -56,21 +56,23 @@ class TestGtfsInstance(object):
         #  a case where file is found but not a zip directory
         with pytest.raises(
             ValueError,
-            match=r"`gtfs_pth` expected file extension .zip. Found .pbf",
+            match=r"`gtfs_pth` expected file extension .zip. Found .html",
         ):
             GtfsInstance(
-                gtfs_pth=here("tests/data/newport-2023-06-13.osm.pbf")
+                gtfs_pth=here("tests/data/gtfs/report/html_template.html")
             )
         with pytest.raises(
             ValueError,
             match=(
                 r"`route_lookup_pth` expected file extension .pkl. Found "
-                r".pbf"
+                r".html"
             ),
         ):
             GtfsInstance(
                 gtfs_pth=GTFS_FIX_PTH,
-                route_lookup_pth=here("tests/data/newport-2023-06-13.osm.pbf"),
+                route_lookup_pth=here(
+                    "tests/data/gtfs/report/html_template.html"
+                ),
             )
         # handling units
         with pytest.raises(

@@ -115,12 +115,12 @@ class TestIOPickle:
                 ),
             ),
             (
-                here("tests/data/newport-2023-06-13.osm.pbf"),  # wrong ext
+                here("tests/data/gtfs/report/html_template.html"),  # wrong ext
                 pytest.raises(
                     ValueError,
                     match=re.escape(
                         "`path` expected file extension ['.pkl', '.pickle']. "
-                        "Found .pbf"
+                        "Found .html"
                     ),
                 ),
             ),

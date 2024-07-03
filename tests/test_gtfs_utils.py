@@ -266,7 +266,7 @@ class TestBboxFilterGtfs(object):
         )
         net = r5py.TransportNetwork(
             osm_pbf=os.path.join(
-                "tests", "data", "newport-2023-06-13.osm.pbf"
+                "tests", "data", "osm", "newport-2023-06-13.osm.pbf"
             ),
             gtfs=[out_pth],
         )
