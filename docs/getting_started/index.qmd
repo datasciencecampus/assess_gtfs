@@ -3,4 +3,59 @@ title: "Getting Started"
 toc: true
 ---
 
-🚧 Page under construction 🚧
+## Usage
+<!-- *Explain how to use the things in the repo.* -->
+
+### Installation
+
+This package is designed to work with python 3.9, 3.10 and 3.11.
+
+We recommend running the package with a virtual environment such as
+[conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+or [venv](https://docs.python.org/3/library/venv.html).
+
+With conda:
+```{.abc}
+conda create -n assess-gtfs python=3.11 -y
+```
+Once completed, activate the environment:
+```{.abc}
+conda activate assess-gtfs
+```
+Install the python package with required dependencies:
+
+```{.abc}
+pip install assess-gtfs
+```
+To use `assess-gtfs`, you will need a source of GTFS data. To locate your own,
+follow the how-to on [GTFS data][gtfs-how-to].
+
+Alternatively, you can use the small GTFS fixture available in our [GitHub repository][newport-gtfs-fixture].
+
+[gtfs-how-to]: /docs/how_to/index.qmd
+[newport-gtfs-fixture]: https://github.com/datasciencecampus/assess_gtfs/blob/dev/tests/data/gtfs/newport-20230613_gtfs.zip
+
+```{python}
+#| warning: false
+#| output: false
+import os
+import subprocess
+import tempfile
+
+from assess_gtfs.multi_validation import MultiGtfsInstance
+
+# download the data
+tmp = tempfile.TemporaryDirectory()
+gtfs_pth = os.path.join(tmp.name, "downloaded_gtfs.zip")
+subprocess.run(["curl", "-L", "-o", gtfs_pth, "https://github.com/datasciencecampus/assess_gtfs/raw/dev/tests/data/gtfs/newport-20230613_gtfs.zip"])
+
+```
+
+Once the data has been downloaded you can instantiate a gtfs object using `assess-gtfs`.
+
+
+```{python}
+#| warning: false
+gtfs = MultiGtfsInstance(gtfs_pth)
+gtfs.is_valid()
+```
