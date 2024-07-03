@@ -17,6 +17,8 @@ about:
           text: GitHub
 ---
 
+  <img src="/docs/_static/assess-gtfs.png"/ alt="assess-gtfs logo" width=200 style="display: block; margin-left: auto; margin-right: auto;">
+
 ## What is `assess_gtfs`?
 
 [General Transit Feed Specification (GTFS)][gtfs] is a common data format for
