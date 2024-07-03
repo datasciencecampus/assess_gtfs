@@ -27,8 +27,7 @@ We welcome contributions from others. Please check out our
 
 ### Installation
 
-This package is designed to work with python 3.11. Full functionality is
-tested on macos only.
+This package is designed to work with python 3.9, 3.10 and 3.11.
 
 We recommend running the package with a virtual environment such as
 [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
