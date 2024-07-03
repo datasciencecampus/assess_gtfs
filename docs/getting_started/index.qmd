@@ -30,10 +30,8 @@ pip install assess-gtfs
 To use `assess-gtfs`, you will need a source of GTFS data. To locate your own,
 follow the how-to on [GTFS data][gtfs-how-to].
 
-Alternatively, you can use the small GTFS fixture available in our [GitHub repository][newport-gtfs-fixture].
-
-[gtfs-how-to]: /docs/how_to/index.qmd
-[newport-gtfs-fixture]: https://github.com/datasciencecampus/assess_gtfs/blob/dev/tests/data/gtfs/newport-20230613_gtfs.zip
+Alternatively, you can use the small GTFS fixture available in our
+[GitHub repository][newport-gtfs-fixture].
 
 ```{python}
 #| warning: false
@@ -47,15 +45,23 @@ from assess_gtfs.multi_validation import MultiGtfsInstance
 # download the data
 tmp = tempfile.TemporaryDirectory()
 gtfs_pth = os.path.join(tmp.name, "downloaded_gtfs.zip")
-subprocess.run(["curl", "-L", "-o", gtfs_pth, "https://github.com/datasciencecampus/assess_gtfs/raw/dev/tests/data/gtfs/newport-20230613_gtfs.zip"])
-
+subprocess.run(
+    ["curl",
+    "-L",
+    "-o",
+    gtfs_pth,
+    "https://github.com/datasciencecampus/assess_gtfs/raw/dev/tests/data/gtfs/newport-20230613_gtfs.zip"
+    ])
 ```
 
-Once the data has been downloaded you can instantiate a gtfs object using `assess-gtfs`.
-
+Once the data has been downloaded you can instantiate a gtfs object using
+`assess-gtfs`.
 
 ```{python}
 #| warning: false
 gtfs = MultiGtfsInstance(gtfs_pth)
 gtfs.is_valid()
 ```
+
+[gtfs-how-to]: /docs/how_to/index.qmd
+[newport-gtfs-fixture]: https://github.com/datasciencecampus/assess_gtfs/blob/dev/tests/data/gtfs/newport-20230613_gtfs.zip
