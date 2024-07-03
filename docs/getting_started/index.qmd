@@ -63,5 +63,7 @@ gtfs = MultiGtfsInstance(gtfs_pth)
 gtfs.is_valid()
 ```
 
+For more on how to use `assess-gtfs`, see the [tutorial](/docs/tutorials/index.qmd).
+
 [gtfs-how-to]: /docs/how_to/index.qmd
 [newport-gtfs-fixture]: https://github.com/datasciencecampus/assess_gtfs/blob/dev/tests/data/gtfs/newport-20230613_gtfs.zip
