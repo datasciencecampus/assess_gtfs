@@ -1459,7 +1459,6 @@ class GtfsInstance:
                 os.path.join(
                     PKG_PATH,
                     "data",
-                    "gtfs",
                     "report",
                     "html_templates",
                     "evaluation_template.html",
@@ -1555,7 +1554,6 @@ class GtfsInstance:
                 os.path.join(
                     PKG_PATH,
                     "data",
-                    "gtfs",
                     "report",
                     "html_templates",
                     "stops_template.html",
@@ -1601,7 +1599,6 @@ class GtfsInstance:
                 os.path.join(
                     PKG_PATH,
                     "data",
-                    "gtfs",
                     "report",
                     "html_templates",
                     "summary_template.html",

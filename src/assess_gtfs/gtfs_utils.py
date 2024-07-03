@@ -147,7 +147,7 @@ def filter_gtfs(
 
 def bbox_filter_gtfs(
     in_pth: Union[pathlib.Path, str] = (
-        os.path.join(PKG_PATH, "data", "gtfs", "newport-20230613_gtfs.zip"),
+        os.path.join(PKG_PATH, "data", "newport-20230613_gtfs.zip"),
     ),
     out_pth: Union[pathlib.Path, str] = pathlib.Path(
         here("data/external/filtered_gtfs.zip")
@@ -173,7 +173,7 @@ def bbox_filter_gtfs(
     ----------
     in_pth : Union[pathlib.Path, str], optional
         Path to the unfiltered GTFS feed. Defaults to
-        os.path.join(PKG_PATH, "data", "gtfs", "newport-20230613_gtfs.zip").
+        os.path.join(PKG_PATH, "data", "newport-20230613_gtfs.zip").
     out_pth : Union[pathlib.Path, str], optional
         Path to write the filtered feed to. Defaults to
         here("data/external/filtered_gtfs.zip").
