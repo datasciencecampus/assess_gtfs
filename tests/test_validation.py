@@ -108,7 +108,7 @@ class TestGtfsInstance(object):
         with_pth = GtfsInstance(
             gtfs_pth=GTFS_FIX_PTH,
             route_lookup_pth=(
-                os.path.join(PKG_PATH, "data", "gtfs", "route_lookup.pkl")
+                os.path.join(PKG_PATH, "data", "route_lookup.pkl")
             ),
         ).ROUTE_LKP
         assert (
