@@ -3,3 +3,35 @@ title: Explanation
 ---
 
 These explanation pages provide an understanding of the `assess-gtfs` package.
+
+`assess-gtfs` allows users to validate, clean, inspect and filter transit
+timetable data in the [General Transit Feed Specification](gtfs-spec) (GTFS)
+format.
+
+## What is GTFS
+
+GTFS files are compressed zip archives of text files. Each text file containing
+information about routes, trips, calendar, stop locations and so on. Various
+transport modelling software are able to use these files as a relational
+database in order to undertake routing operations.
+
+Below are the file contents of a small sample of UK GTFS.
+
+```{.abc}
+.../tests/data/chester-20230816-small_gtfs/
+├── agency.txt
+├── calendar.txt
+├── calendar_dates.txt
+├── feed_info.txt
+├── routes.txt
+├── shapes.txt
+├── stop_times.txt
+├── stops.txt
+└── trips.txt
+
+1 directory, 9 files
+
+```
+
+
+[gtfs-spec]: https://gtfs.org/
