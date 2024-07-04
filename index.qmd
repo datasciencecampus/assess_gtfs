@@ -22,7 +22,7 @@ about:
 ## What is `assess-gtfs`?
 
 [General Transit Feed Specification (GTFS)][gtfs] is a common data format for
-public transit information. GTFS is a pre-requisite for undertaking routing
+public transit information. GTFS is a prerequisite for undertaking routing
 with public transit schedules.
 
 The `assess-gtfs` Python package helps to reduce barriers to understanding the

@@ -94,7 +94,7 @@ The first row in the validity table shows an apparent error, reporting "Invalid 
 gtfs.instances[0].feed.routes.head(10)["route_type"]
 ```
 
-We see that rows 1 though 4 use route_type 200. Google have proposed an
+We see that rows 1 through 4 use route_type 200. Google have proposed an
 [extension to GTFS route_type][google-ext-spec] that many publishers of GTFS
 have adopted. Here you can see that route_type 200 means a coach service and
 would not cause a problem for most routing software. For more on validating

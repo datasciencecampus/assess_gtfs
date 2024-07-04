@@ -375,8 +375,8 @@ schedules that intersect with the bounding box that you provided.
 
 If the routing analysis you wish to perform takes place over a specific time
 window, we can further reduce the GTFS data volume by restricting to dates.
-To do this, we need to specify either a single datestring, or a list of
-datestrings. The format of the date should be "YYYYMMDD".
+To do this, we need to specify either a single date string, or a list of
+date strings. The format of the date should be "YYYYMMDD".
 ```{python}
 today = datetime.datetime.today().strftime(format="%Y%m%d")
 print(f"The date this document was updated at would be passed as: {today}")
@@ -391,9 +391,9 @@ Filter your GTFS feed to a date or range of dates.
 
 #### Hint
 
-Pass either a single date string in "YYYYMMDD" format, or a list of datestrings
-in this format, to the `filter_to_date` method. Print out the new start and end
-dates of your feed by calling the `get_dates()` method once more.
+Pass either a single date string in "YYYYMMDD" format, or a list of date
+strings in this format, to the `filter_to_date` method. Print out the new start
+and end dates of your feed by calling the `get_dates()` method once more.
 
 #### Solution
 
@@ -505,7 +505,7 @@ methods to produce the summaries.
 
 1. Use the default behaviour to produce the first table.
 2. Ensure that the appropriate method allowing stats for days of the week is
-toggled to `True` for the trips summary.
+toggled to `True` for the trip summary.
 
 ### Solution
 
