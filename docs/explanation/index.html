@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -101,12 +101,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../docs/_static/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -176,7 +179,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-gtfs" id="toc-what-is-gtfs" class="nav-link active" data-scroll-target="#what-is-gtfs">What is GTFS?</a></li>
+  <li><a href="#working-with-gtfs" id="toc-working-with-gtfs" class="nav-link" data-scroll-target="#working-with-gtfs">Working with GTFS</a>
+  <ul class="collapse">
+  <li><a href="#filtering-gtfs" id="toc-filtering-gtfs" class="nav-link" data-scroll-target="#filtering-gtfs">Filtering GTFS</a></li>
+  <li><a href="#inspecting-gtfs" id="toc-inspecting-gtfs" class="nav-link" data-scroll-target="#inspecting-gtfs">Inspecting GTFS</a></li>
+  <li><a href="#validating-gtfs" id="toc-validating-gtfs" class="nav-link" data-scroll-target="#validating-gtfs">Validating GTFS</a></li>
+  <li><a href="#cleaning-gtfs" id="toc-cleaning-gtfs" class="nav-link" data-scroll-target="#cleaning-gtfs">Cleaning GTFS</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -202,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>These explanation pages provide an understanding of the <code>assess-gtfs</code> package.</p>
 <p><code>assess-gtfs</code> allows users to validate, clean, inspect and filter transit timetable data in the <a href="gtfs-spec">General Transit Feed Specification</a> (GTFS) format.</p>
 <section id="what-is-gtfs" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-gtfs">What is GTFS</h2>
+<h2 class="anchored" data-anchor-id="what-is-gtfs">What is GTFS?</h2>
 <p>GTFS files are compressed zip archives of text files. Each text file containing information about routes, trips, calendar, stop locations and so on. Various transport modelling software are able to use these files as a relational database in order to undertake routing operations.</p>
 <p>Below are the file contents of a small sample of UK GTFS.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode abc code-with-copy"><code class="sourceCode abc"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>.../tests/data/chester-20230816-small_gtfs/</span>
@@ -217,8 +235,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>└── trips.txt</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>1 directory, 9 files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="working-with-gtfs" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-gtfs">Working with GTFS</h2>
+<p>If you would prefer a demonstration of <code>assess-gtfs</code>, please follow the <a href="../../docs/tutorials/index.html">tutorial</a>.</p>
+<section id="filtering-gtfs" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-gtfs">Filtering GTFS</h3>
+<p>When undertaking routing operations with GTFS, you typically need to filter large feeds to an area of interest. This ensures that building a transport network with a package such as <a href="https://r5py.readthedocs.io/en/stable/">r<sup>5</sup>py</a> is optimised. Feeds can be restricted based upon location with a bounding box. They can also be restricted to a date or list of dates within the feed calendar. For more on filtering GTFS, please see the <a href="../../docs/reference/gtfs_utils.html#assess_gtfs.gtfs_utils.filter_gtfs"><code>assess-gtfs</code> api docs</a>.</p>
+</section>
+<section id="inspecting-gtfs" class="level3">
+<h3 class="anchored" data-anchor-id="inspecting-gtfs">Inspecting GTFS</h3>
+<p>Undertaking routing analysis tends to happen at a specific location and time or time window. It is important to assess the service distribution over the available dates within the GTFS. GTFS tend to come with a range of calendar dates, but the service volume across those dates can be variable and dependent upon the publication frequency of the specific feed.</p>
+<p>The objective is to ensure a selected time of analysis is representative of average service volume within the feed. For a guide to doing this with <code>assess-gtfs</code>, please see the tutorial section on <a href="../../docs/tutorials/index.html#trip-and-route-summaries">summarising GTFS</a>.</p>
+</section>
+<section id="validating-gtfs" class="level3">
+<h3 class="anchored" data-anchor-id="validating-gtfs">Validating GTFS</h3>
+<p>When working with GTFS from a range of sources, it is important to understand whether the feed you intend to use is compliant. Online tools like that available on the French government’s <a href="https://transport.data.gouv.fr/validation">Transport Data Portal</a> are excellent choices for manual validation of a small number of feeds.</p>
+<p><code>assess-gtfs</code> produces tabular outputs for specification warnings and errors using <a href="https://github.com/mrcagney/gtfs_kit"><code>gtfs_kit</code></a> under the hood. Note that not all of these errors are as severe as they initially appear. For example, the below validation table is commonly seen when validating British GTFS:</p>
+<div id="5977990a" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">message</th>
+<th data-quarto-table-cell-role="th">table</th>
+<th data-quarto-table-cell-role="th">rows</th>
+<th data-quarto-table-cell-role="th">GTFS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>error</td>
+<td>Invalid route_type; maybe has extra space char...</td>
+<td>routes</td>
+<td>[1, 2, 3, 4]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>warning</td>
+<td>Unrecognized column agency_noc</td>
+<td>agency</td>
+<td>[]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>warning</td>
+<td>Feed expired</td>
+<td>calendar</td>
+<td>[]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>warning</td>
+<td>Repeated pair (route_short_name, route_long_name)</td>
+<td>routes</td>
+<td>[13]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>warning</td>
+<td>Unrecognized column stop_direction_name</td>
+<td>stop_times</td>
+<td>[]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>warning</td>
+<td>Unrecognized column platform_code</td>
+<td>stops</td>
+<td>[]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>warning</td>
+<td>Unrecognized column trip_direction_name</td>
+<td>trips</td>
+<td>[]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>warning</td>
+<td>Unrecognized column vehicle_journey_code</td>
+<td>trips</td>
+<td>[]</td>
+<td>/opt/hostedtoolcache/Python/3.11.9/x64/lib/pyt...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>The first row in the validity table shows an apparent error, reporting “Invalid route_type; maybe has extra space characters”. Examining the routes table for the affected rows:</p>
+<div id="cf186e2c" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>0      3
+1    200
+2    200
+3    200
+4    200
+5      3
+6      3
+7      3
+8      3
+9      3
+Name: route_type, dtype: int64</code></pre>
+</div>
+</div>
+<p>We see that rows 1 through 4 use route_type 200. Google have proposed an <a href="https://developers.google.com/transit/gtfs/reference/extended-route-types">extension to GTFS route_type</a> that many publishers of GTFS have adopted. Here you can see that route_type 200 means a coach service and would not cause a problem for most routing software. For more on validating GTFS feeds, consult the <a href="../../docs/reference/validation.html#assess_gtfs.validation.GtfsInstance.is_valid">api reference</a> for implementation details.</p>
+</section>
+<section id="cleaning-gtfs" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-gtfs">Cleaning GTFS</h3>
+<p><code>assess-gtfs</code> can be used to attempt to resolve some of the identified problems in GTFS. To see how to do this, please follow along with the <a href="../../docs/tutorials/index.html#clean-feed">tutorial’s <code>clean_feed</code> section</a>. Alternatively, visit the <a href="../../docs/reference/validation.html#assess_gtfs.validation.GtfsInstance.clean_feed">api documentation</a> for more detail.</p>
+<p>Note that cleaning for all specification alerts has not been implemented. To raise a feature request with the package maintainers, please do so on <a href="https://github.com/datasciencecampus/assess_gtfs/issues">GitHub</a>.</p>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
