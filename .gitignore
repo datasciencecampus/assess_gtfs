@@ -17,6 +17,7 @@ docs/tutorials/outputs/
 !tests/data/chester-20230816-small_gtfs.zip
 !tests/data/newport-20230613_gtfs.zip
 !src/assess_gtfs/data/route_lookup.pkl
+!src/assess_gtfs/data/newport-20230613_gtfs.zip
 !tests/data/report/html_template.html
 
 # exception for html templates
