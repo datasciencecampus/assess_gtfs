@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../docs/_static/tp_logo_white_background.png" alt="" class="navbar-logo">
+    <img src="../../docs/_static/assess-gtfs.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Assess GTFS</span>
@@ -282,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="assess_gtfs.gtfs_utils.bbox_filter_gtfs" class="level3">
 <h3 class="anchored" data-anchor-id="assess_gtfs.gtfs_utils.bbox_filter_gtfs">bbox_filter_gtfs</h3>
-<p><code>gtfs_utils.bbox_filter_gtfs(in_pth=(os.path.join(PKG_PATH, 'data', 'gtfs', 'newport-20230613_gtfs.zip')), out_pth=pathlib.Path(here('data/external/filtered_gtfs.zip')), bbox=[-3.077081, 51.52222, -2.925075, 51.593596], units='km', crs='epsg:4326', filter_dates=[])</code></p>
+<p><code>gtfs_utils.bbox_filter_gtfs(in_pth=(os.path.join(PKG_PATH, 'data', 'newport-20230613_gtfs.zip')), out_pth=pathlib.Path(here('data/external/filtered_gtfs.zip')), bbox=[-3.077081, 51.52222, -2.925075, 51.593596], units='km', crs='epsg:4326', filter_dates=[])</code></p>
 <p>Filter a GTFS feed to any routes intersecting with a bounding box.</p>
 <p>Optionally filter to a list of given dates.</p>
 <p>WARNING: THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN A FUTURE VERSION. USE <code>filter_gtfs()</code> INSTEAD.</p>
@@ -292,8 +292,8 @@ ul.task-list li input[type="checkbox"] {
 <colgroup>
 <col style="width: 6%">
 <col style="width: 15%">
-<col style="width: 50%">
-<col style="width: 27%">
+<col style="width: 52%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -307,8 +307,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><code>in_pth</code></td>
 <td>Union[pathlib.Path, str]</td>
-<td>Path to the unfiltered GTFS feed. Defaults to os.path.join(PKG_PATH, “data”, “gtfs”, “newport-20230613_gtfs.zip”).</td>
-<td><code>(os.path.join(PKG_PATH, 'data', 'gtfs', 'newport-20230613_gtfs.zip'))</code></td>
+<td>Path to the unfiltered GTFS feed. Defaults to os.path.join(PKG_PATH, “data”, “newport-20230613_gtfs.zip”).</td>
+<td><code>(os.path.join(PKG_PATH, 'data', 'newport-20230613_gtfs.zip'))</code></td>
 </tr>
 <tr class="even">
 <td><code>out_pth</code></td>
