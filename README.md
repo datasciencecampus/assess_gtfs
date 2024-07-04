@@ -7,8 +7,6 @@
 
 # assess-gtfs
 
-<img src="/docs/_static/assess-gtfs.png" alt="assess-gtfs logo" width=200 style="display: block; margin-left: auto; margin-right: auto;">
-
 > :warning: This repository is still in the development phase. Caution should
 be taken before using or referencing this work in any way - use it at your own
 risk.
