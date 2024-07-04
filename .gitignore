@@ -20,9 +20,9 @@ docs/tutorials/outputs/
 !tests/data/report/html_template.html
 
 # exception for html templates
-!src/assess_gtfs/data/gtfs/report/html_templates/evaluation_template.html
-!src/assess_gtfs/data/gtfs/report/html_templates/stops_template.html
-!src/assess_gtfs/data/gtfs/report/html_templates/summary_template.html
+!src/assess_gtfs/data/report/html_templates/evaluation_template.html
+!src/assess_gtfs/data/report/html_templates/stops_template.html
+!src/assess_gtfs/data/report/html_templates/summary_template.html
 
 ### Project structure ###
 data/*
