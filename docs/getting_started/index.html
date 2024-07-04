@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb3"><pre class="sourceCode abc code-with-copy"><code class="sourceCode abc"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pip install assess-gtfs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To use <code>assess-gtfs</code>, you will need a source of GTFS data. To locate your own, follow the how-to on <a href="../../docs/how_to/index.html">GTFS data</a>.</p>
 <p>Alternatively, you can use the small GTFS fixture that is bundled with the <code>assess_gtfs</code> package.</p>
-<div id="4fb0e77b" class="cell" data-execution_count="1">
+<div id="f5b14637" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>gtfs <span class="op">=</span> MultiGtfsInstance(glob.glob(gtfs_pth <span class="op">+</span> <span class="st">"/*.zip"</span>))</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>gtfs.is_valid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>  0%|          | 0/1 [00:00&lt;?, ?it/s]Validating GTFS from path /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/assess_gtfs/data/newport-20230613_gtfs.zip:   0%|          | 0/1 [00:00&lt;?, ?it/s]Validating GTFS from path /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/assess_gtfs/data/newport-20230613_gtfs.zip: 100%|██████████| 1/1 [00:00&lt;00:00,  6.98it/s]Validating GTFS from path /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/assess_gtfs/data/newport-20230613_gtfs.zip: 100%|██████████| 1/1 [00:00&lt;00:00,  6.94it/s]</code></pre>
+<pre><code>  0%|          | 0/1 [00:00&lt;?, ?it/s]Validating GTFS from path /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/assess_gtfs/data/newport-20230613_gtfs.zip:   0%|          | 0/1 [00:00&lt;?, ?it/s]Validating GTFS from path /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/assess_gtfs/data/newport-20230613_gtfs.zip: 100%|██████████| 1/1 [00:00&lt;00:00,  7.06it/s]Validating GTFS from path /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/assess_gtfs/data/newport-20230613_gtfs.zip: 100%|██████████| 1/1 [00:00&lt;00:00,  7.03it/s]</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
