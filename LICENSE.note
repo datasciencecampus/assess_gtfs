@@ -10,11 +10,5 @@ result of a pandas concatenation of 2 scraped HTML tables:
     2. [Google Extended Route Type Schema](https://developers.google.com/transit/gtfs/reference/extended-route-types)
     ©Google, distributed under
     [Creative Commons 4.0](https://creativecommons.org/licenses/by/4.0/)
-* /./tests/data/gtfs/newport-20230613_gtfs.zip ©Crown Copyright. Licensed under
+* /./tests/data/gtfs/newport-20230613_gtfs.zip and /./tests/data/chester-20230816-small_gtfs.zip ©Crown Copyright. Licensed under
 [Open Government Licence 3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
-* /./tests/data/osm/newport-2023-06-13.osm.pbf Sourced from
-[Geofabrik Download Server](https://www.geofabrik.de/data/download.html).
-©OpenStreetMap, this file is made available under the Open Database License:
-http://opendatacommons.org/licenses/odbl/1.0/. Any rights in individual
-contents of the database are licensed under the Database Contents License:
-http://opendatacommons.org/licenses/dbcl/1.0/
