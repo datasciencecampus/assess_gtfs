@@ -584,9 +584,7 @@ class Test_IsExpectedFiletype(object):
             match="`gtfs.zip` expected file extension .tiff. Found .zip",
         ):
             _is_expected_filetype(
-                os.path.join(
-                    "tests", "data", "gtfs", "newport-20230613_gtfs.zip"
-                ),
+                os.path.join("tests", "data", "newport-20230613_gtfs.zip"),
                 param_nm="gtfs.zip",
                 check_existing=True,
                 exp_ext=".tiff",
@@ -610,13 +608,13 @@ class Test_IsExpectedFiletype(object):
         with pytest.raises(
             ValueError,
             match=re.escape(
-                "`osm.pbf` expected file extension ['.zip', '.gif', '.pdf']. F"
-                "ound .pbf"
+                "`.html` expected file extension ['.zip', '.gif', '.pdf']. F"
+                "ound .html"
             ),
         ):
             _is_expected_filetype(
-                "tests/data/newport-2023-06-13.osm.pbf",
-                "osm.pbf",
+                "tests/data/report/html_template.html",
+                ".html",
                 check_existing=True,
                 exp_ext=[".zip", ".gif", ".pdf"],
             )
@@ -631,10 +629,10 @@ class Test_IsExpectedFiletype(object):
         )
         assert result is None
         result = _is_expected_filetype(
-            "tests/data/newport-2023-06-13.osm.pbf",
-            "osm.pbf",
+            "tests/data/report/html_template.html",
+            ".html",
             check_existing=True,
-            exp_ext=[".zip", ".gif", ".pbf"],
+            exp_ext=[".zip", ".gif", ".pbf", ".html"],
         )
         assert result is None
 

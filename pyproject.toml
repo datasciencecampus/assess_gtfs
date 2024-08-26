@@ -25,7 +25,7 @@ packages = ["src/assess_gtfs"]
 "utils" = "assess_gtfs/utils"
 
 [project]
-name = "assess_gtfs"
+name = "assess-gtfs"
 authors = [
     {name = "Data Science Campus", email = "datasciencecampus@ons.gov.uk"}
 ]
@@ -38,8 +38,8 @@ classifiers = [
     "Operating System :: MacOS",
     "Topic :: Scientific/Engineering :: GIS",
 ]
-requires-python = ">=3.11"
-version = "0.0.4"
+requires-python = ">=3.9"
+version = "0.0.6"
 
 dependencies = [
     'beautifulsoup4',
@@ -62,12 +62,9 @@ test = [
     'pre-commit',
     'pytest',
     'pytest-mock',
-    'r5py', # specifically for test_gtfs_utils.py::TestBboxFilterGtfs::test_bbox_filter_gtfs_to_date_builds_network
 ]
 dev = [
-    'build',
     'hatch',
-    'twine',
 ]
 docs = [
     'ipykernel==6.23.1',

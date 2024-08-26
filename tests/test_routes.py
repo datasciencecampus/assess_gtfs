@@ -134,7 +134,7 @@ class TestScrapeRouteTypeLookup(object):
         """Check if the tables at the urls have changed content."""
         # import the expected fixtures
         lookup_fix = pd.read_pickle(
-            os.path.join(PKG_PATH, "data", "gtfs", "route_lookup.pkl")
+            os.path.join(PKG_PATH, "data", "route_lookup.pkl")
         )
         lookup = scrape_route_type_lookup()
         pd.testing.assert_frame_equal(lookup, lookup_fix)
@@ -159,9 +159,7 @@ class Test_GetSavedRouteTypeLookup(object):
             # test raises from key _is_expected_filetype() defences
             (
                 pathlib.Path(
-                    os.path.join(
-                        "tests", "data", "gtfs", "newport-20230613_gtfs.zip"
-                    )
+                    os.path.join("tests", "data", "newport-20230613_gtfs.zip")
                 ),
                 pytest.raises(
                     ValueError,

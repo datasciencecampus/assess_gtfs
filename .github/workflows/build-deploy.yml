@@ -1,4 +1,5 @@
-# Runs the test suite.
+# Runs the test suite, including intergration and sanity checks - do not
+# release to PYPI if anything fails.
 # Triggered on tagged release.
 # If tests pass, uses hatch to build the distribution, releases with GitHub &
 # deploys to PyPI.

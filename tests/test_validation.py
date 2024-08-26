@@ -21,9 +21,7 @@ from assess_gtfs.validation import (
     _get_intermediate_dates,
 )
 
-GTFS_FIX_PTH = os.path.join(
-    "tests", "data", "gtfs", "newport-20230613_gtfs.zip"
-)
+GTFS_FIX_PTH = os.path.join("tests", "data", "newport-20230613_gtfs.zip")
 
 
 @pytest.fixture(scope="function")  # some funcs expect cleaned feed others dont
@@ -63,21 +61,19 @@ class TestGtfsInstance(object):
         #  a case where file is found but not a zip directory
         with pytest.raises(
             ValueError,
-            match=r"`gtfs_pth` expected file extension .zip. Found .pbf",
+            match=r"`gtfs_pth` expected file extension .zip. Found .html",
         ):
-            GtfsInstance(
-                gtfs_pth=here("tests/data/newport-2023-06-13.osm.pbf")
-            )
+            GtfsInstance(gtfs_pth=here("tests/data/report/html_template.html"))
         with pytest.raises(
             ValueError,
             match=(
                 r"`route_lookup_pth` expected file extension .pkl. Found "
-                r".pbf"
+                r".html"
             ),
         ):
             GtfsInstance(
                 gtfs_pth=GTFS_FIX_PTH,
-                route_lookup_pth=here("tests/data/newport-2023-06-13.osm.pbf"),
+                route_lookup_pth=here("tests/data/report/html_template.html"),
             )
         # handling units
         with pytest.raises(
@@ -119,7 +115,7 @@ class TestGtfsInstance(object):
         with_pth = GtfsInstance(
             gtfs_pth=GTFS_FIX_PTH,
             route_lookup_pth=(
-                os.path.join(PKG_PATH, "data", "gtfs", "route_lookup.pkl")
+                os.path.join(PKG_PATH, "data", "route_lookup.pkl")
             ),
         ).ROUTE_LKP
         assert (
@@ -782,7 +778,7 @@ class TestGtfsInstance(object):
         ).all(), f"Columns were not as expected. Found {found_drc}"
 
         # tests the output of the daily_route_summary table
-        # using data/gtfs/newport-20230613_gtfs.zip
+        # using data/newport-20230613_gtfs.zip
         expected_df = pd.DataFrame(
             {
                 "day": {0: "friday", 1: "friday"},
@@ -864,7 +860,7 @@ class TestGtfsInstance(object):
         ).all(), f"Columns were not as expected. Found {found_drc}"
 
         # tests the output of the daily_route_summary table
-        # using tests/data/gtfs/newport-20230613_gtfs.zip
+        # using tests/data/newport-20230613_gtfs.zip
         expected_df = pd.DataFrame(
             {
                 "day": {0: "friday", 1: "friday"},

@@ -157,7 +157,7 @@ def _set_up_report_dir(
     except FileExistsError:
         pass
     styles_loc = os.path.join(
-        PKG_PATH, "data", "gtfs", "report", "css_styles", "styles.css"
+        PKG_PATH, "data", "report", "css_styles", "styles.css"
     )
     shutil.copy(
         src=styles_loc,

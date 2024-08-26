@@ -1,5 +1,5 @@
 ---
-title: "`assess_gtfs` documentation"
+title: "`assess-gtfs` documentation"
 title-block-banner: true
 date-format: iso
 description: |
@@ -17,21 +17,23 @@ about:
           text: GitHub
 ---
 
-## What is `assess_gtfs`?
+  <img src="/docs/_static/assess-gtfs.png"/ alt="assess-gtfs logo" width=200 style="display: block; margin-left: auto; margin-right: auto;">
+
+## What is `assess-gtfs`?
 
 [General Transit Feed Specification (GTFS)][gtfs] is a common data format for
-public transit information. GTFS is a pre-requisite for undertaking routing
+public transit information. GTFS is a prerequisite for undertaking routing
 with public transit schedules.
 
-The `assess_gtfs` Python package helps to reduce barriers to understanding the
+The `assess-gtfs` Python package helps to reduce barriers to understanding the
 service distribution within GTFS. More specifically, it enables developers to
 inspect, clean and process GTFS for more efficient, localised routing analysis.
 
-### The History of `assess_gtfs`
+### The History of `assess-gtfs`
 
-`assess_gtfs` started out life as a module in the ONS Data Science Campus'
-[`transport_performance`][tp] package. `assess_gtfs` is built upon and inspired
-by the excellent [gtfs_kit][gtfskit] package. `assess_gtfs` was needed to
+`assess-gtfs` started out life as a module in the ONS Data Science Campus'
+[`transport_performance`][tp] package. `assess-gtfs` is built upon and inspired
+by the excellent [gtfs_kit][gtfskit] package. `assess-gtfs` was needed to
 process and inspect GTFS data prior to building transport networks with the
 [r<sup>5</sup>py][r5py] package. Building valid transit networks with the
 output of our GTFS processing pipelines has been the primary user requirement
@@ -45,12 +47,12 @@ These docs are structured in accordance with the [Diátaxis][diataxis] framework
 <div class="grid-container">
 <div class="grid-item item1 jumbotron">
 <p class="jumbotron-icon">🏁</p>
-<p>Want to get up and running with `assess_gtfs` quickly?</p>
+<p>Want to get up and running with `assess-gtfs` quickly?</p>
 <a class="btn btn-primary btn-lg" href="./docs/getting_started/index.html" role="button">Getting Started</a>
 </div>
 <div class="grid-item item2 jumbotron">
 <p class="jumbotron-icon">🔎</p>
-<p>Need more details on the methods/tools used within `assess_gtfs`?</p>
+<p>Need more details on the methods/tools used within `assess-gtfs`?</p>
 <a class="btn btn-primary btn-lg" href="./docs/explanation/index.html" role="button">Explanation</a>
 </div>
 <div class="grid-item item3 jumbotron">
@@ -60,17 +62,17 @@ These docs are structured in accordance with the [Diátaxis][diataxis] framework
 </div>
 <div class="grid-item item4 jumbotron">
 <p class="jumbotron-icon">📝</p>
-<p>Interested in learning how to use `assess_gtfs` by examples?</p>
+<p>Interested in learning how to use `assess-gtfs` by examples?</p>
 <a class="btn btn-primary btn-lg" href="./docs/tutorials/index.html" role="button">Tutorial</a>
 </div>
 <div class="grid-item item5 jumbotron">
 <p class="jumbotron-icon">📖</p>
-<p>Requiring a technical reference covering the `assess_gtfs` API?</p>
+<p>Requiring a technical reference covering the `assess-gtfs` API?</p>
 <a class="btn btn-primary btn-lg" href="./docs/reference/index.html" role="button">API reference</a>
 </div>
 <div class="grid-item item6 jumbotron">
 <p class="jumbotron-icon">🛠️</p>
-<p>Want to contribute to the development of `assess_gtfs`?</p>
+<p>Want to contribute to the development of `assess-gtfs`?</p>
 <a class="btn btn-primary btn-lg" href="https://github.com/datasciencecampus/assess_gtfs" role="button">GitHub</a>
 </div>
 </div>
@@ -80,7 +82,7 @@ These docs are structured in accordance with the [Diátaxis][diataxis] framework
 ## Notes on contributing...
 
 We hope that the open source and public sector communities will collaborate and
-build on this package. You can find the `assess_gtfs` source code on
+build on this package. You can find the `assess-gtfs` source code on
 [GitHub](https://github.com/datasciencecampus/assess_gtfs).
 
 :::

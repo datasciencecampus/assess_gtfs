@@ -13,9 +13,7 @@ from assess_gtfs.report.report_utils import TemplateHTML, _set_up_report_dir
 @pytest.fixture(scope="function")
 def template_fixture():
     """Fixture for test funcs expecting a valid feed object."""
-    template = TemplateHTML(
-        path=here("tests/data/gtfs/report/html_template.html")
-    )
+    template = TemplateHTML(path=here("tests/data/report/html_template.html"))
     return template
 
 

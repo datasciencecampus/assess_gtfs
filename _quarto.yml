@@ -16,7 +16,7 @@ website:
   title: "Assess GTFS"
   favicon: docs/_static/favicon.ico
   navbar:
-    logo: docs/_static/tp_logo_white_background.png
+    logo: docs/_static/assess-gtfs.png
     left:
       - href: docs/getting_started/index.qmd
         text: Getting Started
@@ -61,7 +61,7 @@ metadata-files:
 
 quartodoc:
   title: API reference
-  package: transport_performance
+  package: assess-gtfs
   dir: docs/reference
   sidebar: docs/_sidebar.yml
   sections:

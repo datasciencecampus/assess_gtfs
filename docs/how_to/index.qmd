@@ -8,12 +8,12 @@ date-format: iso
 ---
 
 These pages are short step-by-step instructions on how-to get something done,
-in particular retrieve the required input data for `assess_gtfs`.
+in particular retrieve the required input data for `assess-gtfs`.
 
-Regardless of the source of GTFS, `assess_gtfs` expects feeds to be compressed
+Regardless of the source of GTFS, `assess-gtfs` expects feeds to be compressed
 zip archives.
 
-`assess_gtfs` was written to prepare GTFS feeds for a comparison of British &
+`assess-gtfs` was written to prepare GTFS feeds for a comparison of British &
 French [urban transport performance][tp-map]. This guide covers ingesting data
 from those territories. For other global territory data, consult the
 [GTFS data index][gtfs-data].
