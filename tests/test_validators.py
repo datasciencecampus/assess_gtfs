@@ -41,7 +41,7 @@ class Test_ValidateTravelBetweenConsecutiveStops(object):
         self, gtfs_fixture, _EXPECTED_CHESTER_VALIDITY_DF
     ):
         """General tests for validating travel between consecutive stops."""
-        gtfs_fixture.is_valid(far_stops=False)
+        gtfs_fixture.is_valid(validators={"core_validation": {}})
         validate_travel_between_consecutive_stops(gtfs=gtfs_fixture)
         # This assertion should not contain the final row of the chester
         # fixture, which is created on validate_travel_over_multiple_stops()
@@ -61,7 +61,7 @@ class Test_ValidateTravelOverMultipleStops(object):
         self, gtfs_fixture, _EXPECTED_CHESTER_VALIDITY_DF
     ):
         """General tests for validate_travel_over_multiple_stops()."""
-        gtfs_fixture.is_valid(far_stops=False)
+        gtfs_fixture.is_valid(validators={"core_validation": {}})
         validate_travel_over_multiple_stops(gtfs=gtfs_fixture)
         pd.testing.assert_frame_equal(
             _EXPECTED_CHESTER_VALIDITY_DF, gtfs_fixture.validity_df

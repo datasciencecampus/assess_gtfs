@@ -9,6 +9,7 @@ import pytest
 from assess_gtfs.cleaners import (
     clean_consecutive_stop_fast_travel_warnings,
     clean_multiple_stop_fast_travel_warnings,
+    core_cleaners,
     drop_trips,
 )
 from assess_gtfs.validation import GtfsInstance
@@ -136,7 +137,7 @@ class Test_CleanConsecutiveStopFastTravelWarnings(object):
         self, gtfs_fixture, _EXPECTED_NEWPORT_VALIDITY_DF
     ):
         """General tests for clean_consecutive_stop_fast_travel_warnings()."""
-        gtfs_fixture.is_valid(far_stops=True)
+        gtfs_fixture.is_valid()
         pd.testing.assert_frame_equal(
             _EXPECTED_NEWPORT_VALIDITY_DF, gtfs_fixture.validity_df
         )
@@ -200,7 +201,7 @@ class Test_CleanMultipleStopFastTravelWarnings(object):
         self, gtfs_fixture, _EXPECTED_NEWPORT_VALIDITY_DF
     ):
         """General tests for clean_multiple_stop_fast_travel_warnings()."""
-        gtfs_fixture.is_valid(far_stops=True)
+        gtfs_fixture.is_valid()
         pd.testing.assert_frame_equal(
             _EXPECTED_NEWPORT_VALIDITY_DF, gtfs_fixture.validity_df
         )
@@ -230,11 +231,97 @@ class Test_CleanMultipleStopFastTravelWarnings(object):
                 3: [],
             },
         }
+        # test validation; test gtfs with no warnings
         clean_multiple_stop_fast_travel_warnings(
-            gtfs=gtfs_fixture, validate=False
+            gtfs=gtfs_fixture, validate=True
         )
         gtfs_fixture.is_valid()
         assert expected_validation == gtfs_fixture.validity_df.to_dict(), (
             "Validation table is not as expected after cleaning consecutive "
             "stop fast travel warnings"
         )
+
+
+class TestCoreCleaner(object):
+    """Tests for core_cleaners().
+
+    Notes
+    -----
+    There are no passing tests for this function as it relies on function from
+    gtfs-kit which have already been tested.
+
+    """
+
+    @pytest.mark.parametrize(
+        (
+            "clean_ids, clean_times, clean_route_short_names, drop_zombies, "
+            "raises, match"
+        ),
+        [
+            (
+                1,
+                True,
+                True,
+                True,
+                TypeError,
+                r".*expected .*bool.* Got .*int.*",
+            ),
+            (
+                True,
+                dict(),
+                True,
+                True,
+                TypeError,
+                r".*expected .*bool.* Got .*dict.*",
+            ),
+            (
+                True,
+                True,
+                "test string",
+                True,
+                TypeError,
+                r".*expected .*bool.* Got .*str.*",
+            ),
+            (
+                True,
+                True,
+                True,
+                2.12,
+                TypeError,
+                r".*expected .*bool.* Got .*float.*",
+            ),
+        ],
+    )
+    def test_core_claners_defence(
+        self,
+        gtfs_fixture,
+        clean_ids,
+        clean_times,
+        clean_route_short_names,
+        drop_zombies,
+        raises,
+        match,
+    ):
+        """Defensive tests for core_cleaners."""
+        with pytest.raises(raises, match=match):
+            gtfs_fixture.is_valid()
+            core_cleaners(
+                gtfs_fixture,
+                clean_ids,
+                clean_times,
+                clean_route_short_names,
+                drop_zombies,
+            )
+
+    def test_core_cleaners_drop_zombies_warns(self, gtfs_fixture):
+        """Test that warnings are emitted when shape_id isn't present in...
+
+        trips.
+        """
+        gtfs_fixture.feed.trips.drop("shape_id", axis=1, inplace=True)
+        with pytest.warns(
+            UserWarning,
+            match=r".*drop_zombies cleaner was unable to operate.*",
+        ):
+            gtfs_fixture.is_valid(validators={"core_validation": None})
+            gtfs_fixture.clean_feed()
